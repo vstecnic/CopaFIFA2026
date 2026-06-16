@@ -245,10 +245,10 @@ export function openCountryDetailsModal(countryId) {
       // Aggregate scorers names for quick preview on card
       let scorersSummary = '';
       if (match.result.scorers && match.result.scorers.length > 0) {
-        const uniqueScorers = [...new Set(match.result.scorers.map(s => `${s.name} (${s.minute}')`))];
+        const scorerLines = match.result.scorers.map(s => `${flags[s.team] || ''} ${s.name} (${s.minute}')`);
         scorersSummary = `
           <div class="match-scorers-preview">
-            ⚽ ${uniqueScorers.join(', ')}
+            ⚽ ${scorerLines.join(' &nbsp;·&nbsp; ')}
           </div>
         `;
       }
@@ -405,10 +405,11 @@ function openMatchDetailModal(match) {
       photoContainer.appendChild(imgEl);
       photoContainer.appendChild(fallbackEl);
 
+      const scorerCountryName = appData.countries.find(c => c.id === scorer.team)?.name || scorer.team;
       sticker.innerHTML = `
         <div class="sticker-name" title="${scorer.name}">${scorer.name}</div>
         <div class="sticker-meta">
-          <span class="sticker-team-badge">${flags[scorer.team] || ''} ${scorer.team}</span>
+          <span class="sticker-team-badge">${flags[scorer.team] || ''} ${scorerCountryName}</span>
           <span class="sticker-minute">⚽ ${scorer.minute}'</span>
         </div>
       `;
