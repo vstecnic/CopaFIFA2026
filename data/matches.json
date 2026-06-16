@@ -714,8 +714,17 @@
     "awayTeam": "NZL",
     "date": "2026-06-16T01:00:00Z",
     "venue": "SoFi Stadium, Los Angeles",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 2,
+      "scorers": [
+        { "name": "Elijah Just", "playerId": "", "minute": 7, "team": "NZL", "wikiName": "Elijah_Just" },
+        { "name": "Ramin Rezaeian", "playerId": "", "minute": 33, "team": "IRN", "wikiName": "Ramin_Rezaeian" },
+        { "name": "Elijah Just", "playerId": "", "minute": 54, "team": "NZL", "wikiName": "Elijah_Just" },
+        { "name": "Mohammad Mohebi", "playerId": "", "minute": 64, "team": "IRN", "wikiName": "Mohammad_Mohebi" }
+      ]
+    }
   },
   {
     "id": "match_G_3",
@@ -778,8 +787,15 @@
     "awayTeam": "URY",
     "date": "2026-06-15T22:00:00Z",
     "venue": "Hard Rock Stadium, Miami",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Abdulelah Al-Amri", "playerId": "", "minute": 41, "team": "SAU", "wikiName": "Abdulelah_Al-Amri" },
+        { "name": "Maximiliano Araújo", "playerId": "", "minute": 80, "team": "URY", "wikiName": "Maximiliano_Araújo" }
+      ]
+    }
   },
   {
     "id": "match_H_3",
