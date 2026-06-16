@@ -1,10 +1,6 @@
 // api/scores.js
 import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dir = dirname(__filename);
+import { join } from 'path';
 
 // The 48 countries participating in the 2026 FIFA World Cup, grouped A-L
 // according to the official final draw. ID matches ISO 3166-1 alpha-3 codes
@@ -86,7 +82,7 @@ const countries = [
 ];
 
 // Match data loaded from data/matches.json — updated by scripts/update-results.js
-const matches = JSON.parse(readFileSync(join(__dir, '../data/matches.json'), 'utf8'));
+const matches = JSON.parse(readFileSync(join(process.cwd(), 'data/matches.json'), 'utf8'));
 
 export default function handler(req, res) {
   // CORS configuration
