@@ -33,6 +33,14 @@ async function bootstrap() {
     // 5. Setup sidebar listings, events, and search triggers
     initUI(data, handleCountrySelection);
 
+    // 6. Update overlay date with today's date in Spanish
+    const overlayEl = document.getElementById('overlay-date-text');
+    if (overlayEl) {
+      const months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+      const today = new Date();
+      overlayEl.textContent = `Mundial en curso (${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()})`;
+    }
+
   } catch (error) {
     console.error('Error al iniciar la aplicación:', error);
     // Display error message to user

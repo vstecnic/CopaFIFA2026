@@ -13,6 +13,11 @@ const GROUP_COLORS = {
 const BORDER_COLOR = '#222d44';
 const BG_DEEP = '#0a0f1d';
 
+// Non-participant territories that should inherit a group's color (e.g. overseas territories)
+const TERRITORY_GROUP_OVERRIDE = {
+  'FLK': 'J', // Islas Malvinas → Argentina (Grupo J)
+};
+
 /**
  * Initializes the Leaflet map in the map container
  */
@@ -63,6 +68,7 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
         // Resolve ISO_A3 in properties
         const iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
         const isParticipant = participantIds.has(iso);
+        const overrideGroup = TERRITORY_GROUP_OVERRIDE[iso];
 
         if (isParticipant) {
           const color = GROUP_COLORS[groupByCountry[iso]] || '#00d2ff';
@@ -73,6 +79,16 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
             fillColor: color,
             fillOpacity: 0.25,
             className: 'participant-polygon'
+          };
+        } else if (overrideGroup) {
+          const color = GROUP_COLORS[overrideGroup] || '#00d2ff';
+          return {
+            color: color,
+            weight: 1,
+            opacity: 0.6,
+            fillColor: color,
+            fillOpacity: 0.18,
+            className: 'territory-polygon'
           };
         } else {
           return {
