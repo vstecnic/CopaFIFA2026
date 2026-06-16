@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0a0f1d"/>
+
+  <!-- Cup body -->
+  <path d="M8,4 L24,4 L21.5,15.5 Q20,19.5 16,20.5 Q12,19.5 10.5,15.5 Z" fill="#FFD700"/>
+
+  <!-- Globe inside cup -->
+  <circle cx="16" cy="9" r="4" fill="#1d4ed8" opacity="0.85"/>
+  <ellipse cx="16" cy="9" rx="4" ry="1.7" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.6"/>
+  <line x1="16" y1="5" x2="16" y2="13" stroke="rgba(255,255,255,0.45)" stroke-width="0.6"/>
+
+  <!-- Left handle -->
+  <path d="M10,6.5 C6.5,6.5 4.5,9.5 4.5,12.5 C4.5,15 6.5,16.5 9,15.5"
+        fill="none" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Right handle -->
+  <path d="M22,6.5 C25.5,6.5 27.5,9.5 27.5,12.5 C27.5,15 25.5,16.5 23,15.5"
+        fill="none" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Stem -->
+  <rect x="14.5" y="20.5" width="3" height="3.5" fill="#FFD700"/>
+
+  <!-- Upper base -->
+  <rect x="9" y="24" width="14" height="2.5" rx="1.5" fill="#FFD700"/>
+
+  <!-- Lower base -->
+  <rect x="10.5" y="26.5" width="11" height="2.5" rx="1" fill="#DAA520"/>
+</svg>
