@@ -3,6 +3,7 @@
 let map;
 let geojsonLayer;
 const countryLayers = {}; // Cache map layers by ISO code for fast access
+const territoryLayers = {}; // Cache layers for non-participant territories with color override
 
 // Distinct color per group (A–L) for map polygon highlighting
 const GROUP_COLORS = {
@@ -13,9 +14,10 @@ const GROUP_COLORS = {
 const BORDER_COLOR = '#222d44';
 const BG_DEEP = '#0a0f1d';
 
-// Non-participant territories that should inherit a group's color (e.g. overseas territories)
+// Non-participant territories that should inherit a group's color.
+// parent: the participant ISO whose hover should also highlight this territory.
 const TERRITORY_GROUP_OVERRIDE = {
-  'FLK': 'J', // Islas Malvinas → Argentina (Grupo J)
+  'FLK': { group: 'J', parent: 'ARG' }, // Islas Malvinas → Argentina (Grupo J)
 };
 
 /**
@@ -55,11 +57,18 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
   try {
     const participantIds = new Set(participatingCountries.map(c => c.id));
     const groupByCountry = Object.fromEntries(participatingCountries.map(c => [c.id, c.group]));
-    
+
+    // Build parent → [territory ISOs] lookup for hover linking
+    const parentToTerritories = {};
+    for (const [tIso, info] of Object.entries(TERRITORY_GROUP_OVERRIDE)) {
+      if (!parentToTerritories[info.parent]) parentToTerritories[info.parent] = [];
+      parentToTerritories[info.parent].push(tIso);
+    }
+
     // Fetch Natural Earth 1:110m lightweight GeoJSON
     const response = await fetch('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_0_countries.geojson');
     if (!response.ok) throw new Error('Error al descargar polígonos del mapa');
-    
+
     const geojsonData = await response.ok ? await response.json() : null;
     if (!geojsonData) return;
 
@@ -68,7 +77,7 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
         // Resolve ISO_A3 in properties
         const iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
         const isParticipant = participantIds.has(iso);
-        const overrideGroup = TERRITORY_GROUP_OVERRIDE[iso];
+        const override = TERRITORY_GROUP_OVERRIDE[iso];
 
         if (isParticipant) {
           const color = GROUP_COLORS[groupByCountry[iso]] || '#00d2ff';
@@ -80,8 +89,8 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
             fillOpacity: 0.25,
             className: 'participant-polygon'
           };
-        } else if (overrideGroup) {
-          const color = GROUP_COLORS[overrideGroup] || '#00d2ff';
+        } else if (override) {
+          const color = GROUP_COLORS[override.group] || '#00d2ff';
           return {
             color: color,
             weight: 1,
@@ -104,10 +113,16 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
       onEachFeature: (feature, layer) => {
         const iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
         const isParticipant = participantIds.has(iso);
+        const isTerritory = !!TERRITORY_GROUP_OVERRIDE[iso];
+
+        if (isTerritory) {
+          territoryLayers[iso] = layer;
+        }
 
         if (isParticipant) {
           countryLayers[iso] = layer;
-          
+          const linkedTerritories = parentToTerritories[iso] || [];
+
           // Hover interactions
           layer.on({
             mouseover: (e) => {
@@ -116,7 +131,14 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
                 fillOpacity: 0.55,
                 weight: 3
               });
-              
+
+              // Also highlight linked territories (e.g. Malvinas when hovering Argentina)
+              linkedTerritories.forEach(tIso => {
+                if (territoryLayers[tIso]) {
+                  territoryLayers[tIso].setStyle({ fillOpacity: 0.5, weight: 2 });
+                }
+              });
+
               // Leaflet tooltip displaying name
               const countryObj = participatingCountries.find(c => c.id === iso);
               if (countryObj) {
@@ -132,6 +154,13 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
               ly.setStyle({
                 fillOpacity: 0.25,
                 weight: 2
+              });
+
+              // Restore linked territories to their resting state
+              linkedTerritories.forEach(tIso => {
+                if (territoryLayers[tIso]) {
+                  territoryLayers[tIso].setStyle({ fillOpacity: 0.18, weight: 1 });
+                }
               });
             },
             click: () => {
