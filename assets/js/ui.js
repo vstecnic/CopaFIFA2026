@@ -1,20 +1,26 @@
 // assets/js/ui.js
 
-// Complete Unicode Flags Dictionary for all 48 participating countries
-export const flags = {
-  MEX: "🇲🇽", ZAF: "🇿🇦", KOR: "🇰🇷", CZE: "🇨🇿",
-  CAN: "🇨🇦", BIH: "🇧🇦", QAT: "🇶🇦", CHE: "🇨🇭",
-  BRA: "🇧🇷", MAR: "🇲🇦", HTI: "🇭🇹", SCO: "🏴",
-  USA: "🇺🇸", PRY: "🇵🇾", AUS: "🇦🇺", TUR: "🇹🇷",
-  DEU: "🇩🇪", CUW: "🇨🇼", CIV: "🇨🇮", ECU: "🇪🇨",
-  NLD: "🇳🇱", JPN: "🇯🇵", SWE: "🇸🇪", TUN: "🇹🇳",
-  BEL: "🇧🇪", EGY: "🇪🇬", IRN: "🇮🇷", NZL: "🇳🇿",
-  ESP: "🇪🇸", CPV: "🇨🇻", SAU: "🇸🇦", URY: "🇺🇾",
-  FRA: "🇫🇷", SEN: "🇸🇳", IRQ: "🇮🇶", NOR: "🇳🇴",
-  ARG: "🇦🇷", DZA: "🇩🇿", AUT: "🇦🇹", JOR: "🇯🇴",
-  PRT: "🇵🇹", COD: "🇨🇩", UZB: "🇺🇿", COL: "🇨🇴",
-  GBR: "🇬🇧", HRV: "🇭🇷", GHA: "🇬🇭", PAN: "🇵🇦"
+// ISO 3166-1 alpha-3 → alpha-2 mapping for flagcdn.com
+// Windows does not render flag emoji — we use real flag images instead.
+const ISO3_TO_ISO2 = {
+  MEX:'mx', ZAF:'za', KOR:'kr', CZE:'cz', CAN:'ca', BIH:'ba', QAT:'qa', CHE:'ch',
+  BRA:'br', MAR:'ma', HTI:'ht', SCO:'gb-sct', USA:'us', PRY:'py', AUS:'au', TUR:'tr',
+  DEU:'de', CUW:'cw', CIV:'ci', ECU:'ec', NLD:'nl', JPN:'jp', SWE:'se', TUN:'tn',
+  BEL:'be', EGY:'eg', IRN:'ir', NZL:'nz', ESP:'es', CPV:'cv', SAU:'sa', URY:'uy',
+  FRA:'fr', SEN:'sn', IRQ:'iq', NOR:'no', ARG:'ar', DZA:'dz', AUT:'at', JOR:'jo',
+  PRT:'pt', COD:'cd', UZB:'uz', COL:'co', GBR:'gb', HRV:'hr', GHA:'gh', PAN:'pa'
 };
+
+// Returns an <img> HTML string for a country flag from flagcdn.com
+// size: 'w20' | 'w40' | 'w80' (width in px, height proportional ~3:4)
+function flagImg(iso3, size = 'w40') {
+  const code = ISO3_TO_ISO2[iso3];
+  if (!code) return '';
+  return `<img src="https://flagcdn.com/${size}/${code}.webp" class="flag-img" alt="${iso3}" loading="lazy">`;
+}
+
+// Kept for backward compat (not used for display anymore)
+export const flags = {};
 
 // Global references to UI state
 let appData = null;
@@ -137,9 +143,8 @@ function renderSidebar(countriesToRender) {
   const sorted = [...countriesToRender].sort((a, b) => a.name.localeCompare(b.name));
 
   sorted.forEach(country => {
-    const flag = flags[country.id] || "🏳️";
     const titles = country.stats.titles;
-    
+
     // Cup badge if they have won World Cups
     let titlesBadge = '';
     if (titles > 0) {
@@ -152,7 +157,7 @@ function renderSidebar(countriesToRender) {
     item.setAttribute('tabindex', '0');
     item.innerHTML = `
       <div class="country-item-info">
-        <span class="country-item-flag" aria-hidden="true">${flag}</span>
+        <span class="country-item-flag">${flagImg(country.id, 'w40')}</span>
         <div class="country-item-details">
           <span class="country-item-name">${country.name}</span>
           <span class="country-item-group">Grupo ${country.group}</span>
@@ -210,7 +215,7 @@ export function openCountryDetailsModal(countryId) {
   if (!country) return;
 
   // Populate basic header data
-  modalCountryFlag.textContent = flags[countryId] || "🏳️";
+  modalCountryFlag.innerHTML = flagImg(countryId, 'w80');
   modalCountryName.textContent = country.name;
   modalCountryGroup.textContent = `Grupo ${country.group}`;
   
@@ -232,8 +237,8 @@ export function openCountryDetailsModal(countryId) {
   countryMatches.forEach(match => {
     const homeName = appData.countries.find(c => c.id === match.homeTeam)?.name || match.homeTeam;
     const awayName = appData.countries.find(c => c.id === match.awayTeam)?.name || match.awayTeam;
-    const homeFlag = flags[match.homeTeam] || "🏳️";
-    const awayFlag = flags[match.awayTeam] || "🏳️";
+    const homeFlag = flagImg(match.homeTeam, 'w40');
+    const awayFlag = flagImg(match.awayTeam, 'w40');
 
     const matchCard = document.createElement('div');
     matchCard.className = `match-item ${match.status}`;
@@ -245,7 +250,7 @@ export function openCountryDetailsModal(countryId) {
       // Aggregate scorers names for quick preview on card
       let scorersSummary = '';
       if (match.result.scorers && match.result.scorers.length > 0) {
-        const scorerLines = match.result.scorers.map(s => `${flags[s.team] || ''} ${s.name} (${s.minute}')`);
+        const scorerLines = match.result.scorers.map(s => `${flagImg(s.team, 'w20')} ${s.name} (${s.minute}')`);
         scorersSummary = `
           <div class="match-scorers-preview">
             ⚽ ${scorerLines.join(' &nbsp;·&nbsp; ')}
@@ -362,13 +367,10 @@ async function loadPlayerPhoto(imgEl, fallbackEl, wikiName) {
 function openMatchDetailModal(match) {
   const homeName = appData.countries.find(c => c.id === match.homeTeam)?.name || match.homeTeam;
   const awayName = appData.countries.find(c => c.id === match.awayTeam)?.name || match.awayTeam;
-  const homeFlag = flags[match.homeTeam] || "🏳️";
-  const awayFlag = flags[match.awayTeam] || "🏳️";
-
   // Render header scoreboard details
   detailMatchStage.textContent = match.group ? `Grupo ${match.group}` : match.stage;
-  detailHomeFlag.textContent = homeFlag;
-  detailAwayFlag.textContent = awayFlag;
+  detailHomeFlag.innerHTML = flagImg(match.homeTeam, 'w80');
+  detailAwayFlag.innerHTML = flagImg(match.awayTeam, 'w80');
   detailHomeName.textContent = homeName;
   detailAwayName.textContent = awayName;
   detailHomeScore.textContent = match.result.homeScore;
@@ -409,7 +411,7 @@ function openMatchDetailModal(match) {
       sticker.innerHTML = `
         <div class="sticker-name" title="${scorer.name}">${scorer.name}</div>
         <div class="sticker-meta">
-          <span class="sticker-team-badge">${flags[scorer.team] || ''} ${scorerCountryName}</span>
+          <span class="sticker-team-badge">${flagImg(scorer.team, 'w20')} ${scorerCountryName}</span>
           <span class="sticker-minute">⚽ ${scorer.minute}'</span>
         </div>
       `;
