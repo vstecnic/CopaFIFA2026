@@ -844,8 +844,17 @@
     "awayTeam": "SEN",
     "date": "2026-06-16T19:00:00Z",
     "venue": "MetLife Stadium, New York/New Jersey",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Kylian Mbappé", "playerId": "", "minute": 66, "team": "FRA", "wikiName": "Kylian_Mbappé" },
+        { "name": "Bradley Barcola", "playerId": "", "minute": 82, "team": "FRA", "wikiName": "Bradley_Barcola" },
+        { "name": "Ibrahim Mbaye", "playerId": "", "minute": 95, "team": "SEN", "wikiName": "Ibrahim_Mbaye" },
+        { "name": "Kylian Mbappé", "playerId": "", "minute": 96, "team": "FRA", "wikiName": "Kylian_Mbappé" }
+      ]
+    }
   },
   {
     "id": "match_I_2",
@@ -854,8 +863,16 @@
     "awayTeam": "NOR",
     "date": "2026-06-16T22:00:00Z",
     "venue": "Gillette Stadium, Boston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 2,
+      "scorers": [
+        { "name": "Erling Haaland", "playerId": "", "minute": 29, "team": "NOR", "wikiName": "Erling_Haaland" },
+        { "name": "Aymen Hussein", "playerId": "", "minute": 39, "team": "IRQ", "wikiName": "Aymen_Hussein" },
+        { "name": "Erling Haaland", "playerId": "", "minute": 43, "team": "NOR", "wikiName": "Erling_Haaland" }
+      ]
+    }
   },
   {
     "id": "match_I_3",
