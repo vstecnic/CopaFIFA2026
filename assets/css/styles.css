@@ -845,8 +845,8 @@ body, html {
 /* Sidebar Footer */
 .sidebar-footer {
   padding: 0.85rem 1rem;
-  border-top: 1px solid var(--border-color);
-  background-color: var(--bg-panel);
+  border-top: 2px solid var(--border-color);
+  background-color: #070b16;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -858,31 +858,31 @@ body, html {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: var(--text-muted);
   transition: var(--transition-bezier);
 }
 
-.footer-brand:hover {
+.footer-brand:hover .footer-devby {
   color: var(--accent-color);
 }
 
 .footer-devby {
   font-size: 0.65rem;
-  color: var(--text-dark);
+  color: #a0b0d0;
   white-space: nowrap;
   line-height: 1;
+  transition: color 0.3s ease;
 }
 
 .footer-logo {
   height: 22px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0.85);
+  filter: brightness(1) drop-shadow(0 0 4px rgba(0,210,255,0.15));
   transition: filter 0.3s ease;
 }
 
 .footer-brand:hover .footer-logo {
-  filter: brightness(1.1);
+  filter: brightness(1.15) drop-shadow(0 0 6px rgba(0,210,255,0.35));
 }
 
 .footer-divider {
@@ -913,7 +913,7 @@ body, html {
 
 .footer-phone {
   font-size: 0.65rem;
-  color: var(--text-muted);
+  color: #a0b0d0;
   white-space: nowrap;
   transition: color 0.3s ease;
 }
