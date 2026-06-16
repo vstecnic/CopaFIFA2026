@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copa del Mundo FIFA 2026 - Registro Interactivo</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Registro interactivo de la Copa del Mundo FIFA 2026. Sigue los resultados, estadísticas históricas y calendario de partidos de los 48 países participantes con un mapa interactivo.">
+  <meta name="keywords" content="FIFA 2026, Copa del Mundo, Mundial 2026, Mapa Interactivo, Resultados, Estadísticas, Figuritas FIFA">
+  <meta name="author" content="FIFA 2026 Interactive Portal">
+  
+  <!-- Google Fonts: Orbitron (Tech headers) and Inter (Clean body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet.js CSS CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+        crossorigin="" />
+        
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  
+  <!-- App Shell Container -->
+  <div class="app-container">
+    
+    <!-- Sidebar Izquierdo Fijo (350px) -->
+    <aside class="sidebar" id="sidebar">
+      <header class="sidebar-header">
+        <div class="logo-area">
+          <span class="logo-icon">🏆</span>
+          <h1>FIFA 2026</h1>
+        </div>
+        <p class="subtitle">REGISTRO INTERACTIVO</p>
+        
+        <!-- Search bar to filter countries -->
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Buscar país participante..." autocomplete="off">
+          <span class="search-icon">🔍</span>
+        </div>
+      </header>
+      
+      <!-- Scrollable list of 48 countries -->
+      <div class="countries-list" id="countries-list" aria-label="Países Participantes">
+        <!-- Rendered dynamically by assets/js/ui.js -->
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Cargando países y estadísticas...</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="sidebar-footer">
+        <a href="https://www.sigma-dev.com.ar/" target="_blank" rel="noopener" title="Sigma Dev" class="footer-brand">
+          <span class="footer-devby">Desarrollado por</span>
+          <img class="footer-logo" src="assets/img/Logo Transparente1.png" alt="Sigma Dev">
+        </a>
+        <div class="footer-divider"></div>
+        <a href="https://wa.me/5491158430181" target="_blank" rel="noopener" title="Contactar por WhatsApp" class="footer-wsp-link">
+          <img class="footer-wsp" src="assets/img/WSP01.png" alt="WhatsApp">
+          <span class="footer-phone">+54 9 11 5843-0181</span>
+        </a>
+      </footer>
+    </aside>
+    
+    <!-- Contenedor del Mapa (Resto de la pantalla) -->
+    <main class="map-wrapper">
+      <div id="map" aria-label="Mapa Geográfico Mundial Interactivo"></div>
+      
+      <!-- Quick Status Indicators on the Map -->
+      <div class="map-overlay-info">
+        <span class="pulse-dot"></span>
+        <span class="overlay-text">Mundial en curso (Junio 15, 2026)</span>
+      </div>
+    </main>
+    
+  </div>
+
+  <!-- Modal Nivel 1: Partidos por País (Pop-up) -->
+  <div class="modal-overlay" id="matches-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="close-matches-modal" aria-label="Cerrar modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="country-badge">
+          <span class="country-flag" id="modal-country-flag">🏳️</span>
+          <h2 id="modal-country-name">País Seleccionado</h2>
+        </div>
+        <p class="modal-subtitle" id="modal-country-group">Grupo X</p>
+      </div>
+      
+      <!-- Country Stats Highlight inside Modal -->
+      <div class="country-stats-grid">
+        <div class="stat-card">
+          <span class="stat-num" id="modal-stat-participations">0</span>
+          <span class="stat-label">Mundiales</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="modal-stat-titles">0</span>
+          <span class="stat-label">Títulos</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="modal-stat-best">N/A</span>
+          <span class="stat-label">Mejor Puesto</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">Partidos de la Copa del Mundo 2026</h3>
+      
+      <div class="matches-list" id="modal-matches-list">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Nivel 2: Detalle de Partido (Álbum de Figuritas) -->
+  <div class="modal-overlay modal-lvl-2" id="match-details-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content sticker-modal-content">
+      <button class="modal-close" id="close-details-modal" aria-label="Cerrar detalles del partido">&times;</button>
+      
+      <div class="modal-header text-center">
+        <p class="stage-tag" id="detail-match-stage">Fase de Grupos</p>
+        <div class="match-scoreboard-large">
+          <div class="scoreboard-team">
+            <span class="detail-flag" id="detail-home-flag">🏳️</span>
+            <span class="detail-team-name" id="detail-home-name">Local</span>
+          </div>
+          <div class="scoreboard-score">
+            <span id="detail-home-score">0</span>
+            <span class="score-divider">-</span>
+            <span id="detail-away-score">0</span>
+          </div>
+          <div class="scoreboard-team">
+            <span class="detail-team-name" id="detail-away-name">Visitante</span>
+            <span class="detail-flag" id="detail-away-flag">🏳️</span>
+          </div>
+        </div>
+        <p class="match-venue-info" id="detail-match-venue">Estadio, Ciudad</p>
+      </div>
+
+      <div class="sticker-album-section">
+        <h4 class="album-title">🌟 GOLEADORES DESTACADOS (FIGURITAS DEL ÁLBUM)</h4>
+        
+        <!-- Stickers Grid -->
+        <div class="stickers-grid" id="stickers-grid">
+          <!-- Rendered dynamically by assets/js/ui.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet.js JS CDN -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+          crossorigin=""></script>
+          
+  <!-- Core Modular Scripts -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

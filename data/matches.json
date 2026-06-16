@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "match_A_1",
+    "group": "A",
+    "homeTeam": "MEX",
+    "awayTeam": "ZAF",
+    "date": "2026-06-11T17:00:00Z",
+    "venue": "Estadio Azteca, Ciudad de México",
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 0,
+      "scorers": [
+        {
+          "name": "Julián Quiñones",
+          "playerId": "428512",
+          "minute": 9,
+          "team": "MEX",
+          "wikiName": "Julian_Quinones"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "playerId": "211337",
+          "minute": 67,
+          "team": "MEX",
+          "wikiName": "Raul_Jimenez"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_A_2",
+    "group": "A",
+    "homeTeam": "KOR",
+    "awayTeam": "CZE",
+    "date": "2026-06-11T20:00:00Z",
+    "venue": "Estadio Akron, Zapopan",
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Ladislav Krejčí",
+          "playerId": "100603",
+          "minute": 59,
+          "team": "CZE",
+          "wikiName": "Ladislav_Krejci"
+        },
+        {
+          "name": "Hwang In-beom",
+          "playerId": "100804",
+          "minute": 67,
+          "team": "KOR",
+          "wikiName": "Hwang_In-beom"
+        },
+        {
+          "name": "Oh Hyeon-gyu",
+          "playerId": "459033",
+          "minute": 80,
+          "team": "KOR",
+          "wikiName": "Oh_Hyeon-gyu"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_A_3",
+    "group": "A",
+    "homeTeam": "MEX",
+    "awayTeam": "KOR",
+    "date": "2026-06-18T20:00:00Z",
+    "venue": "Estadio Akron, Zapopan",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_A_4",
+    "group": "A",
+    "homeTeam": "CZE",
+    "awayTeam": "ZAF",
+    "date": "2026-06-18T17:00:00Z",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_A_5",
+    "group": "A",
+    "homeTeam": "CZE",
+    "awayTeam": "MEX",
+    "date": "2026-06-24T20:00:00Z",
+    "venue": "Estadio Azteca, Ciudad de México",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_A_6",
+    "group": "A",
+    "homeTeam": "ZAF",
+    "awayTeam": "KOR",
+    "date": "2026-06-24T17:00:00Z",
+    "venue": "Estadio BBVA, Guadalupe",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_B_1",
+    "group": "B",
+    "homeTeam": "CAN",
+    "awayTeam": "BIH",
+    "date": "2026-06-12T19:00:00Z",
+    "venue": "BMO Field, Toronto",
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Jovo Lukić",
+          "playerId": "100205",
+          "minute": 21,
+          "team": "BIH",
+          "wikiName": null
+        },
+        {
+          "name": "Cyle Larin",
+          "playerId": "388192",
+          "minute": 78,
+          "team": "CAN",
+          "wikiName": "Cyle_Larin"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_B_2",
+    "group": "B",
+    "homeTeam": "QAT",
+    "awayTeam": "CHE",
+    "date": "2026-06-13T19:00:00Z",
+    "venue": "Levi's Stadium, San Francisco",
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Breel Embolo",
+          "playerId": "100905",
+          "minute": 17,
+          "team": "CHE",
+          "wikiName": "Breel_Embolo"
+        },
+        {
+          "name": "Miro Muheim (autogol)",
+          "playerId": "100906",
+          "minute": 94,
+          "team": "QAT",
+          "wikiName": "Miro_Muheim"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_B_3",
+    "group": "B",
+    "homeTeam": "CAN",
+    "awayTeam": "QAT",
+    "date": "2026-06-18T19:00:00Z",
+    "venue": "BC Place, Vancouver",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_B_4",
+    "group": "B",
+    "homeTeam": "CHE",
+    "awayTeam": "BIH",
+    "date": "2026-06-18T22:00:00Z",
+    "venue": "SoFi Stadium, Los Angeles",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_B_5",
+    "group": "B",
+    "homeTeam": "CHE",
+    "awayTeam": "CAN",
+    "date": "2026-06-24T19:00:00Z",
+    "venue": "BC Place, Vancouver",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_B_6",
+    "group": "B",
+    "homeTeam": "BIH",
+    "awayTeam": "QAT",
+    "date": "2026-06-24T22:00:00Z",
+    "venue": "Lumen Field, Seattle",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_C_1",
+    "group": "C",
+    "homeTeam": "BRA",
+    "awayTeam": "MAR",
+    "date": "2026-06-13T22:00:00Z",
+    "venue": "MetLife Stadium, New York/New Jersey",
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Ismael Saibari",
+          "playerId": "100305",
+          "minute": 21,
+          "team": "MAR",
+          "wikiName": "Ismael_Saibari"
+        },
+        {
+          "name": "Vinícius Júnior",
+          "playerId": "411082",
+          "minute": 32,
+          "team": "BRA",
+          "wikiName": "Vinicius_Jr"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_C_2",
+    "group": "C",
+    "homeTeam": "HTI",
+    "awayTeam": "SCO",
+    "date": "2026-06-14T01:00:00Z",
+    "venue": "Gillette Stadium, Boston",
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "John McGinn",
+          "playerId": "100502",
+          "minute": 28,
+          "team": "SCO",
+          "wikiName": "John_McGinn"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_C_3",
+    "group": "C",
+    "homeTeam": "BRA",
+    "awayTeam": "HTI",
+    "date": "2026-06-19T22:00:00Z",
+    "venue": "Lincoln Financial Field, Philadelphia",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_C_4",
+    "group": "C",
+    "homeTeam": "SCO",
+    "awayTeam": "MAR",
+    "date": "2026-06-19T19:00:00Z",
+    "venue": "Gillette Stadium, Boston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_C_5",
+    "group": "C",
+    "homeTeam": "SCO",
+    "awayTeam": "BRA",
+    "date": "2026-06-24T22:00:00Z",
+    "venue": "Hard Rock Stadium, Miami",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_C_6",
+    "group": "C",
+    "homeTeam": "MAR",
+    "awayTeam": "HTI",
+    "date": "2026-06-24T19:00:00Z",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_D_1",
+    "group": "D",
+    "homeTeam": "USA",
+    "awayTeam": "PRY",
+    "date": "2026-06-13T01:00:00Z",
+    "venue": "SoFi Stadium, Los Angeles",
+    "status": "played",
+    "result": {
+      "homeScore": 4,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Damián Bobadilla (autogol)",
+          "playerId": "300101",
+          "minute": 7,
+          "team": "USA",
+          "wikiName": null
+        },
+        {
+          "name": "Folarin Balogun",
+          "playerId": "440182",
+          "minute": 31,
+          "team": "USA",
+          "wikiName": "Folarin_Balogun"
+        },
+        {
+          "name": "Maurício",
+          "playerId": "300102",
+          "minute": 73,
+          "team": "PRY",
+          "wikiName": "Mauricio_(footballer,_born_2001)"
+        },
+        {
+          "name": "Folarin Balogun",
+          "playerId": "440182",
+          "minute": 95,
+          "team": "USA",
+          "wikiName": "Folarin_Balogun"
+        },
+        {
+          "name": "Giovanni Reyna",
+          "playerId": "420199",
+          "minute": 98,
+          "team": "USA",
+          "wikiName": "Giovanni_Reyna"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_D_2",
+    "group": "D",
+    "homeTeam": "AUS",
+    "awayTeam": "TUR",
+    "date": "2026-06-14T04:00:00Z",
+    "venue": "BC Place, Vancouver",
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 0,
+      "scorers": [
+        {
+          "name": "Nestory Irankunda",
+          "playerId": "440301",
+          "minute": 27,
+          "team": "AUS",
+          "wikiName": "Nestory_Irankunda"
+        },
+        {
+          "name": "Connor Metcalfe",
+          "playerId": "440302",
+          "minute": 75,
+          "team": "AUS",
+          "wikiName": "Connor_Metcalfe"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_D_3",
+    "group": "D",
+    "homeTeam": "USA",
+    "awayTeam": "AUS",
+    "date": "2026-06-19T22:00:00Z",
+    "venue": "Lumen Field, Seattle",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_D_4",
+    "group": "D",
+    "homeTeam": "TUR",
+    "awayTeam": "PRY",
+    "date": "2026-06-19T19:00:00Z",
+    "venue": "Levi's Stadium, San Francisco",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_D_5",
+    "group": "D",
+    "homeTeam": "TUR",
+    "awayTeam": "USA",
+    "date": "2026-06-25T22:00:00Z",
+    "venue": "SoFi Stadium, Los Angeles",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_D_6",
+    "group": "D",
+    "homeTeam": "PRY",
+    "awayTeam": "AUS",
+    "date": "2026-06-25T19:00:00Z",
+    "venue": "Levi's Stadium, San Francisco",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_E_1",
+    "group": "E",
+    "homeTeam": "DEU",
+    "awayTeam": "CUW",
+    "date": "2026-06-14T17:00:00Z",
+    "venue": "NRG Stadium, Houston",
+    "status": "played",
+    "result": {
+      "homeScore": 7,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Lukas Nmecha",
+          "playerId": "440401",
+          "minute": 6,
+          "team": "DEU",
+          "wikiName": "Lukas_Nmecha"
+        },
+        {
+          "name": "Livano Comenencia",
+          "playerId": "101201",
+          "minute": 21,
+          "team": "CUW",
+          "wikiName": "Livano_Comenencia"
+        },
+        {
+          "name": "Nico Schlotterbeck",
+          "playerId": "430212",
+          "minute": 38,
+          "team": "DEU",
+          "wikiName": "Nico_Schlotterbeck"
+        },
+        {
+          "name": "Kai Havertz",
+          "playerId": "418012",
+          "minute": 50,
+          "team": "DEU",
+          "wikiName": "Kai_Havertz"
+        },
+        {
+          "name": "Jamal Musiala",
+          "playerId": "439012",
+          "minute": 47,
+          "team": "DEU",
+          "wikiName": "Jamal_Musiala"
+        },
+        {
+          "name": "Deniz Undav",
+          "playerId": "440405",
+          "minute": 78,
+          "team": "DEU",
+          "wikiName": "Deniz_Undav"
+        },
+        {
+          "name": "Kai Havertz",
+          "playerId": "418012",
+          "minute": 88,
+          "team": "DEU",
+          "wikiName": "Kai_Havertz"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_E_2",
+    "group": "E",
+    "homeTeam": "CIV",
+    "awayTeam": "ECU",
+    "date": "2026-06-14T23:00:00Z",
+    "venue": "Lincoln Financial Field, Philadelphia",
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 0,
+      "scorers": [
+        {
+          "name": "Amad Diallo",
+          "playerId": "101301",
+          "minute": 90,
+          "team": "CIV",
+          "wikiName": "Amad_Diallo"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_E_3",
+    "group": "E",
+    "homeTeam": "DEU",
+    "awayTeam": "CIV",
+    "date": "2026-06-20T19:00:00Z",
+    "venue": "BMO Field, Toronto",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_E_4",
+    "group": "E",
+    "homeTeam": "ECU",
+    "awayTeam": "CUW",
+    "date": "2026-06-20T22:00:00Z",
+    "venue": "Arrowhead Stadium, Kansas City",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_E_5",
+    "group": "E",
+    "homeTeam": "ECU",
+    "awayTeam": "DEU",
+    "date": "2026-06-25T22:00:00Z",
+    "venue": "MetLife Stadium, New York/New Jersey",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_E_6",
+    "group": "E",
+    "homeTeam": "CUW",
+    "awayTeam": "CIV",
+    "date": "2026-06-25T19:00:00Z",
+    "venue": "Lincoln Financial Field, Philadelphia",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_F_1",
+    "group": "F",
+    "homeTeam": "NLD",
+    "awayTeam": "JPN",
+    "date": "2026-06-14T20:00:00Z",
+    "venue": "AT&T Stadium, Dallas",
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 2,
+      "scorers": [
+        {
+          "name": "Virgil van Dijk",
+          "playerId": "311012",
+          "minute": 50,
+          "team": "NLD",
+          "wikiName": "Virgil_van_Dijk"
+        },
+        {
+          "name": "Keito Nakamura",
+          "playerId": "440601",
+          "minute": 57,
+          "team": "JPN",
+          "wikiName": "Keito_Nakamura"
+        },
+        {
+          "name": "Crysencio Summerville",
+          "playerId": "440501",
+          "minute": 64,
+          "team": "NLD",
+          "wikiName": "Crysencio_Summerville"
+        },
+        {
+          "name": "Daichi Kamada",
+          "playerId": "389013",
+          "minute": 88,
+          "team": "JPN",
+          "wikiName": "Daichi_Kamada"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_F_2",
+    "group": "F",
+    "homeTeam": "SWE",
+    "awayTeam": "TUN",
+    "date": "2026-06-15T02:00:00Z",
+    "venue": "Estadio BBVA, Guadalupe",
+    "status": "played",
+    "result": {
+      "homeScore": 5,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Yasin Ayari",
+          "playerId": "101503",
+          "minute": 7,
+          "team": "SWE",
+          "wikiName": "Yasin_Ayari"
+        },
+        {
+          "name": "Alexander Isak",
+          "playerId": "101502",
+          "minute": 30,
+          "team": "SWE",
+          "wikiName": "Alexander_Isak"
+        },
+        {
+          "name": "Omar Rekik",
+          "playerId": "101603",
+          "minute": 43,
+          "team": "TUN",
+          "wikiName": "Omar_Rekik"
+        },
+        {
+          "name": "Viktor Gyökeres",
+          "playerId": "101501",
+          "minute": 59,
+          "team": "SWE",
+          "wikiName": "Viktor_Gyokeres"
+        },
+        {
+          "name": "Mattias Svanberg",
+          "playerId": "440701",
+          "minute": 84,
+          "team": "SWE",
+          "wikiName": "Mattias_Svanberg"
+        },
+        {
+          "name": "Yasin Ayari",
+          "playerId": "101503",
+          "minute": 96,
+          "team": "SWE",
+          "wikiName": "Yasin_Ayari"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_F_3",
+    "group": "F",
+    "homeTeam": "NLD",
+    "awayTeam": "SWE",
+    "date": "2026-06-20T17:00:00Z",
+    "venue": "NRG Stadium, Houston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_F_4",
+    "group": "F",
+    "homeTeam": "TUN",
+    "awayTeam": "JPN",
+    "date": "2026-06-20T20:00:00Z",
+    "venue": "Estadio BBVA, Guadalupe",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_F_5",
+    "group": "F",
+    "homeTeam": "TUN",
+    "awayTeam": "NLD",
+    "date": "2026-06-25T17:00:00Z",
+    "venue": "Arrowhead Stadium, Kansas City",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_F_6",
+    "group": "F",
+    "homeTeam": "JPN",
+    "awayTeam": "SWE",
+    "date": "2026-06-25T20:00:00Z",
+    "venue": "AT&T Stadium, Dallas",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_G_1",
+    "group": "G",
+    "homeTeam": "BEL",
+    "awayTeam": "EGY",
+    "date": "2026-06-15T19:00:00Z",
+    "venue": "Lumen Field, Seattle",
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        {
+          "name": "Emam Ashour",
+          "playerId": "101703",
+          "minute": 19,
+          "team": "EGY",
+          "wikiName": "Emam_Ashour"
+        },
+        {
+          "name": "Mohamed Hany (autogol)",
+          "playerId": "440801",
+          "minute": 66,
+          "team": "BEL",
+          "wikiName": "Mohamed_Hany"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match_G_2",
+    "group": "G",
+    "homeTeam": "IRN",
+    "awayTeam": "NZL",
+    "date": "2026-06-16T01:00:00Z",
+    "venue": "SoFi Stadium, Los Angeles",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_G_3",
+    "group": "G",
+    "homeTeam": "BEL",
+    "awayTeam": "IRN",
+    "date": "2026-06-21T22:00:00Z",
+    "venue": "SoFi Stadium, Los Angeles",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_G_4",
+    "group": "G",
+    "homeTeam": "NZL",
+    "awayTeam": "EGY",
+    "date": "2026-06-21T19:00:00Z",
+    "venue": "BC Place, Vancouver",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_G_5",
+    "group": "G",
+    "homeTeam": "NZL",
+    "awayTeam": "BEL",
+    "date": "2026-06-26T19:00:00Z",
+    "venue": "BC Place, Vancouver",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_G_6",
+    "group": "G",
+    "homeTeam": "EGY",
+    "awayTeam": "IRN",
+    "date": "2026-06-26T22:00:00Z",
+    "venue": "Lumen Field, Seattle",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_H_1",
+    "group": "H",
+    "homeTeam": "ESP",
+    "awayTeam": "CPV",
+    "date": "2026-06-15T18:00:00Z",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 0,
+      "scorers": []
+    }
+  },
+  {
+    "id": "match_H_2",
+    "group": "H",
+    "homeTeam": "SAU",
+    "awayTeam": "URY",
+    "date": "2026-06-15T22:00:00Z",
+    "venue": "Hard Rock Stadium, Miami",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_H_3",
+    "group": "H",
+    "homeTeam": "ESP",
+    "awayTeam": "SAU",
+    "date": "2026-06-21T18:00:00Z",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_H_4",
+    "group": "H",
+    "homeTeam": "URY",
+    "awayTeam": "CPV",
+    "date": "2026-06-21T22:00:00Z",
+    "venue": "Hard Rock Stadium, Miami",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_H_5",
+    "group": "H",
+    "homeTeam": "URY",
+    "awayTeam": "ESP",
+    "date": "2026-06-26T20:00:00Z",
+    "venue": "Estadio Akron, Zapopan",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_H_6",
+    "group": "H",
+    "homeTeam": "CPV",
+    "awayTeam": "SAU",
+    "date": "2026-06-26T17:00:00Z",
+    "venue": "NRG Stadium, Houston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_I_1",
+    "group": "I",
+    "homeTeam": "FRA",
+    "awayTeam": "SEN",
+    "date": "2026-06-16T19:00:00Z",
+    "venue": "MetLife Stadium, New York/New Jersey",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_I_2",
+    "group": "I",
+    "homeTeam": "IRQ",
+    "awayTeam": "NOR",
+    "date": "2026-06-16T22:00:00Z",
+    "venue": "Gillette Stadium, Boston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_I_3",
+    "group": "I",
+    "homeTeam": "FRA",
+    "awayTeam": "IRQ",
+    "date": "2026-06-22T19:00:00Z",
+    "venue": "Lincoln Financial Field, Philadelphia",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_I_4",
+    "group": "I",
+    "homeTeam": "NOR",
+    "awayTeam": "SEN",
+    "date": "2026-06-22T22:00:00Z",
+    "venue": "MetLife Stadium, New York/New Jersey",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_I_5",
+    "group": "I",
+    "homeTeam": "NOR",
+    "awayTeam": "FRA",
+    "date": "2026-06-26T19:00:00Z",
+    "venue": "Gillette Stadium, Boston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_I_6",
+    "group": "I",
+    "homeTeam": "SEN",
+    "awayTeam": "IRQ",
+    "date": "2026-06-26T22:00:00Z",
+    "venue": "BMO Field, Toronto",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_J_1",
+    "group": "J",
+    "homeTeam": "ARG",
+    "awayTeam": "DZA",
+    "date": "2026-06-17T01:00:00Z",
+    "venue": "Arrowhead Stadium, Kansas City",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_J_2",
+    "group": "J",
+    "homeTeam": "AUT",
+    "awayTeam": "JOR",
+    "date": "2026-06-16T19:00:00Z",
+    "venue": "Levi's Stadium, San Francisco",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_J_3",
+    "group": "J",
+    "homeTeam": "ARG",
+    "awayTeam": "AUT",
+    "date": "2026-06-22T17:00:00Z",
+    "venue": "AT&T Stadium, Dallas",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_J_4",
+    "group": "J",
+    "homeTeam": "JOR",
+    "awayTeam": "DZA",
+    "date": "2026-06-23T03:00:00Z",
+    "venue": "Levi's Stadium, San Francisco",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_J_5",
+    "group": "J",
+    "homeTeam": "JOR",
+    "awayTeam": "ARG",
+    "date": "2026-06-28T02:00:00Z",
+    "venue": "AT&T Stadium, Dallas",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_J_6",
+    "group": "J",
+    "homeTeam": "DZA",
+    "awayTeam": "AUT",
+    "date": "2026-06-28T02:00:00Z",
+    "venue": "Arrowhead Stadium, Kansas City",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_K_1",
+    "group": "K",
+    "homeTeam": "PRT",
+    "awayTeam": "COD",
+    "date": "2026-06-17T17:00:00Z",
+    "venue": "NRG Stadium, Houston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_K_2",
+    "group": "K",
+    "homeTeam": "UZB",
+    "awayTeam": "COL",
+    "date": "2026-06-18T02:00:00Z",
+    "venue": "Estadio Azteca, Ciudad de México",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_K_3",
+    "group": "K",
+    "homeTeam": "PRT",
+    "awayTeam": "UZB",
+    "date": "2026-06-23T17:00:00Z",
+    "venue": "NRG Stadium, Houston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_K_4",
+    "group": "K",
+    "homeTeam": "COL",
+    "awayTeam": "COD",
+    "date": "2026-06-24T02:00:00Z",
+    "venue": "Estadio Akron, Zapopan",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_K_5",
+    "group": "K",
+    "homeTeam": "COL",
+    "awayTeam": "PRT",
+    "date": "2026-06-27T23:30:00Z",
+    "venue": "Hard Rock Stadium, Miami",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_K_6",
+    "group": "K",
+    "homeTeam": "COD",
+    "awayTeam": "UZB",
+    "date": "2026-06-27T23:30:00Z",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_L_1",
+    "group": "L",
+    "homeTeam": "GBR",
+    "awayTeam": "HRV",
+    "date": "2026-06-17T19:00:00Z",
+    "venue": "AT&T Stadium, Dallas",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_L_2",
+    "group": "L",
+    "homeTeam": "GHA",
+    "awayTeam": "PAN",
+    "date": "2026-06-17T22:00:00Z",
+    "venue": "BMO Field, Toronto",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_L_3",
+    "group": "L",
+    "homeTeam": "GBR",
+    "awayTeam": "GHA",
+    "date": "2026-06-23T19:00:00Z",
+    "venue": "Gillette Stadium, Boston",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_L_4",
+    "group": "L",
+    "homeTeam": "PAN",
+    "awayTeam": "HRV",
+    "date": "2026-06-23T22:00:00Z",
+    "venue": "BMO Field, Toronto",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_L_5",
+    "group": "L",
+    "homeTeam": "PAN",
+    "awayTeam": "GBR",
+    "date": "2026-06-27T19:00:00Z",
+    "venue": "MetLife Stadium, New York/New Jersey",
+    "status": "scheduled",
+    "result": null
+  },
+  {
+    "id": "match_L_6",
+    "group": "L",
+    "homeTeam": "HRV",
+    "awayTeam": "GHA",
+    "date": "2026-06-27T22:00:00Z",
+    "venue": "Lincoln Financial Field, Philadelphia",
+    "status": "scheduled",
+    "result": null
+  }
+]

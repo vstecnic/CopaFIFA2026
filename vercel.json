@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "crons": [
+    {
+      "path": "/api/scores",
+      "schedule": "0 5 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/scores",
+      "destination": "/api/scores.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

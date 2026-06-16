@@ -1,0 +1,962 @@
+/* Design System & CSS Variables */
+:root {
+  --bg-deep: #0a0f1d;
+  --bg-panel: #121826;
+  --bg-panel-hover: #1b2438;
+  --border-color: #222d44;
+  --accent-color: #00d2ff;
+  --accent-glow: rgba(0, 210, 255, 0.3);
+  --accent-hover: #5ce6ff;
+  --text-main: #ffffff;
+  --text-muted: #8fa0dd;
+  --text-dark: #4d5c8a;
+  
+  --font-title: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --sidebar-width: 350px;
+  
+  --transition-bezier: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Base Styles & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: var(--font-body);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  background-color: var(--bg-panel);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  flex-shrink: 0;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  font-size: 1.75rem;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.sidebar-header h1 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #fff 40%, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar-header .subtitle {
+  font-family: var(--font-title);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+/* Search bar styling */
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-container input {
+  width: 100%;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition-bezier);
+}
+
+.search-container input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Countries List */
+.countries-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Custom Scrollbar for Sidebar & Modals */
+.countries-list::-webkit-scrollbar,
+.matches-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.countries-list::-webkit-scrollbar-track,
+.matches-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.countries-list::-webkit-scrollbar-thumb,
+.matches-list::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+.countries-list::-webkit-scrollbar-thumb:hover,
+.matches-list::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Loading State style */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(0, 210, 255, 0.1);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Country card in Sidebar */
+.country-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 0.65rem;
+  cursor: pointer;
+  transition: var(--transition-bezier);
+  will-change: transform, border-color, box-shadow;
+}
+
+.country-item:hover {
+  border-color: var(--accent-color);
+  background-color: var(--bg-panel-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.15);
+}
+
+.country-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.country-item-flag {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.country-item-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.country-item-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--text-main);
+}
+
+.country-item-group {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-title);
+}
+
+.country-item-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.cups-won {
+  color: #ffd700;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Map Wrapper & Map Container */
+.map-wrapper {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-deep);
+}
+
+/* Custom dark styles for Leaflet elements */
+.leaflet-container {
+  background-color: var(--bg-deep) !important;
+}
+
+.leaflet-bar {
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+}
+
+.leaflet-bar a {
+  background-color: var(--bg-panel) !important;
+  color: var(--text-main) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: var(--transition-bezier);
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--bg-panel-hover) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Custom Leaflet popup design */
+.leaflet-popup-content-wrapper {
+  background: var(--bg-panel) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  font-family: var(--font-body);
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Map overlay text */
+.map-overlay-info {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(18, 24, 38, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1000;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7);
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(0, 210, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 210, 255, 0);
+  }
+}
+
+.overlay-text {
+  font-size: 0.75rem;
+  font-family: var(--font-title);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Modal Overlay Styles (Glassmorphism + CSS transition) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(5, 7, 13, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 550px;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transform: translateY(30px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+/* Level 2 Modal (Sticker album) specific overlay */
+.modal-lvl-2 {
+  z-index: 3000;
+  background-color: rgba(5, 7, 13, 0.85);
+}
+
+.modal-lvl-2 .modal-content.sticker-modal-content {
+  max-width: 700px;
+  background: radial-gradient(circle at top right, #172138, var(--bg-panel));
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 210, 255, 0.2);
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-bezier);
+}
+
+.modal-close:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Modal Headers */
+.country-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.country-flag {
+  font-size: 2.25rem;
+}
+
+.modal-header h2 {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  color: var(--text-main);
+  text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.modal-subtitle {
+  font-family: var(--font-title);
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Country Statistics Grid inside Modal */
+.country-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.85rem;
+  text-align: center;
+  transition: var(--transition-bezier);
+}
+
+.stat-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+/* Matches List and Items */
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.match-item {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: var(--transition-bezier);
+}
+
+.match-item.played {
+  cursor: pointer;
+}
+
+.match-item.played:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 210, 255, 0.1);
+}
+
+.match-info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.match-stage {
+  font-family: var(--font-title);
+  font-weight: 600;
+}
+
+.match-date-badge {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.25rem 0.65rem;
+}
+
+.match-item.played .match-date-badge {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.match-teams-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.match-team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 40%;
+}
+
+.match-team.team-away {
+  justify-content: flex-end;
+}
+
+.match-flag-small {
+  font-size: 1.25rem;
+}
+
+.match-score-bubble {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  min-width: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.match-score-bubble.future {
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.match-venue {
+  font-size: 0.7rem;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* Match Scorers list summary in Match Card */
+.match-scorers-preview {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border-color);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.scorer-name-preview {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Level 2 Match Detail Scoreboard */
+.match-scoreboard-large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.scoreboard-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 30%;
+}
+
+.detail-flag {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.detail-team-name {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.scoreboard-score {
+  font-family: var(--font-title);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  text-shadow: 0 0 20px var(--accent-glow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.score-divider {
+  font-size: 2rem;
+  color: var(--border-color);
+}
+
+.match-venue-info {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.stage-tag {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  background-color: var(--accent-glow);
+}
+
+/* Sticker Album Section & Figuritas Grid */
+.sticker-album-section {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.album-title {
+  font-family: var(--font-title);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Collectible Sticker Design */
+.sticker-card {
+  background-color: var(--bg-panel);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, box-shadow, border-color;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Cold blue luminous border with gold accent for high-performing stickers */
+.sticker-card.has-glow {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+/* The actual 3D holographic hover effect */
+.sticker-card:hover {
+  transform: scale(1.05) rotate(2deg);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.4);
+  z-index: 10;
+}
+
+.sticker-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(0, 210, 255, 0.15) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: 0.6s;
+}
+
+.sticker-card:hover::before {
+  left: 150%;
+}
+
+.sticker-photo-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--bg-deep);
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-bezier);
+}
+
+.sticker-card:hover .sticker-photo-container {
+  border-color: var(--accent-color);
+}
+
+.sticker-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Vector fallback avatar styling */
+.sticker-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--bg-deep), var(--border-color));
+  color: var(--accent-color);
+}
+
+.sticker-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  color: var(--text-main);
+}
+
+.sticker-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.sticker-minute {
+  background-color: var(--accent-glow);
+  color: var(--accent-color);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.sticker-team-badge {
+  font-family: var(--font-title);
+}
+
+/* Empty State/No scorers warning */
+.empty-scorers-msg {
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 0.85rem;
+  padding: 2rem 0;
+  width: 100%;
+  font-style: italic;
+}
+
+/* Utility layout center */
+.text-center {
+  text-align: center;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-panel);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: var(--transition-bezier);
+}
+
+.footer-brand:hover {
+  color: var(--accent-color);
+}
+
+.footer-devby {
+  font-size: 0.65rem;
+  color: var(--text-dark);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.footer-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+.footer-brand:hover .footer-logo {
+  filter: brightness(1.1);
+}
+
+.footer-divider {
+  width: 1px;
+  height: 28px;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+}
+
+.footer-wsp-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition: var(--transition-bezier);
+}
+
+.footer-wsp-link:hover .footer-phone {
+  color: #25d366;
+}
+
+.footer-wsp {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-phone {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+/* Responsive adjustment for Mobile viewports */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: 45%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .map-wrapper {
+    height: 55%;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .country-stats-grid {
+    gap: 0.5rem;
+  }
+  
+  .stat-card {
+    padding: 0.5rem;
+  }
+  
+  .stat-num {
+    font-size: 1rem;
+  }
+  
+  .match-scoreboard-large {
+    gap: 0.5rem;
+  }
+  
+  .scoreboard-score {
+    font-size: 2.25rem;
+  }
+}
