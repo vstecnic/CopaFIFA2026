@@ -923,8 +923,16 @@
     "awayTeam": "DZA",
     "date": "2026-06-17T01:00:00Z",
     "venue": "Arrowhead Stadium, Kansas City",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Lionel Messi", "playerId": "", "minute": 17, "team": "ARG", "wikiName": "Lionel_Messi" },
+        { "name": "Lionel Messi", "playerId": "", "minute": 60, "team": "ARG", "wikiName": "Lionel_Messi" },
+        { "name": "Lionel Messi", "playerId": "", "minute": 76, "team": "ARG", "wikiName": "Lionel_Messi" }
+      ]
+    }
   },
   {
     "id": "match_J_2",
