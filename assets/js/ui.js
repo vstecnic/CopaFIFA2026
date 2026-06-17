@@ -342,6 +342,11 @@ async function loadPlayerPhoto(imgEl, fallbackEl, wikiName) {
     fallbackEl.style.display = 'flex';
     return;
   }
+  // Direct image URL override (e.g. Wikimedia Commons URL)
+  if (wikiName.startsWith('https://')) {
+    imgEl.src = wikiName;
+    return;
+  }
   try {
     const res = await fetch(
       `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiName)}`,

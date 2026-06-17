@@ -928,9 +928,9 @@
       "homeScore": 3,
       "awayScore": 0,
       "scorers": [
-        { "name": "Lionel Messi", "playerId": "", "minute": 17, "team": "ARG", "wikiName": "Lionel_Messi" },
-        { "name": "Lionel Messi", "playerId": "", "minute": 60, "team": "ARG", "wikiName": "Lionel_Messi" },
-        { "name": "Lionel Messi", "playerId": "", "minute": 76, "team": "ARG", "wikiName": "Lionel_Messi" }
+        { "name": "Lionel Messi", "playerId": "", "minute": 17, "team": "ARG", "wikiName": "https://upload.wikimedia.org/wikipedia/commons/5/52/Lionel_Messi_playing_in_Argentina_2022_FIFA_World_Cup.jpg" },
+        { "name": "Lionel Messi", "playerId": "", "minute": 60, "team": "ARG", "wikiName": "https://upload.wikimedia.org/wikipedia/commons/5/52/Lionel_Messi_playing_in_Argentina_2022_FIFA_World_Cup.jpg" },
+        { "name": "Lionel Messi", "playerId": "", "minute": 76, "team": "ARG", "wikiName": "https://upload.wikimedia.org/wikipedia/commons/5/52/Lionel_Messi_playing_in_Argentina_2022_FIFA_World_Cup.jpg" }
       ]
     }
   },
