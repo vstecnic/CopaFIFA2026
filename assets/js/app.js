@@ -58,9 +58,13 @@ async function bootstrap() {
     // Próximo partido
     const nextMatchEl = document.getElementById('overlay-next-match');
     if (nextMatchEl) {
-      const now = new Date();
+      // Use the last played match date as reference (no browser-clock dependency)
+      const lastPlayedDate = data.matches
+        .filter(m => m.status === 'played')
+        .reduce((max, m) => { const d = new Date(m.date); return d > max ? d : max; }, new Date(0));
+
       const nextMatch = [...data.matches]
-        .filter(m => m.status === 'scheduled' && new Date(m.date) > now)
+        .filter(m => m.status === 'scheduled' && new Date(m.date) > lastPlayedDate)
         .sort((a, b) => new Date(a.date) - new Date(b.date))[0];
 
       if (nextMatch) {
