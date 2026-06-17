@@ -74,10 +74,16 @@
     <main class="map-wrapper">
       <div id="map" aria-label="Mapa Geográfico Mundial Interactivo"></div>
       
-      <!-- Quick Status Indicators on the Map -->
+      <!-- Próximo partido (centro-inferior del mapa) -->
+      <div class="map-overlay-next" id="overlay-next-match"></div>
+
+      <!-- Estado mundial (inferior derecho) -->
       <div class="map-overlay-info">
         <span class="pulse-dot"></span>
-        <span class="overlay-text" id="overlay-date-text">Mundial en curso</span>
+        <div class="overlay-info-lines">
+          <span class="overlay-text" id="overlay-date-text">Mundial en curso</span>
+          <span class="overlay-update-text" id="overlay-update-text"></span>
+        </div>
       </div>
     </main>
     

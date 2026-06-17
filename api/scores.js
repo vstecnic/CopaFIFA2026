@@ -84,6 +84,9 @@ const countries = [
 // Match data loaded from data/matches.json — updated by scripts/update-results.js
 const matches = JSON.parse(readFileSync(join(process.cwd(), 'data/matches.json'), 'utf8'));
 
+// Timestamp of the last manual data update — update this each time results are loaded
+const DATA_LAST_UPDATED = '2026-06-17T04:10:00Z';
+
 export default function handler(req, res) {
   // CORS configuration
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -101,6 +104,7 @@ export default function handler(req, res) {
 
   const dataset = {
     updatedAt: new Date().toISOString(),
+    dataLastUpdated: DATA_LAST_UPDATED,
     countries: countries,
     matches: matches
   };

@@ -1,7 +1,7 @@
 // assets/js/app.js
 
 import { initMap, loadCountryPolygons, focusCountry } from './map.js';
-import { initUI, openCountryDetailsModal } from './ui.js';
+import { initUI, openCountryDetailsModal, flagImg } from './ui.js';
 
 // Cache key constants
 const CACHE_KEY_DATA = 'wc2026_tournament_data';
@@ -33,12 +33,50 @@ async function bootstrap() {
     // 5. Setup sidebar listings, events, and search triggers
     initUI(data, handleCountrySelection);
 
-    // 6. Update overlay date with today's date in Spanish
+    // 6. Update map overlays
+    const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    const MONTHS_SHORT = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+    // Fecha actual
     const overlayEl = document.getElementById('overlay-date-text');
     if (overlayEl) {
-      const months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
       const today = new Date();
-      overlayEl.textContent = `Mundial en curso (${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()})`;
+      overlayEl.textContent = `Mundial en curso (${MONTHS[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()})`;
+    }
+
+    // Última actualización de datos
+    const updateEl = document.getElementById('overlay-update-text');
+    if (updateEl && data.dataLastUpdated) {
+      const dt = new Date(data.dataLastUpdated);
+      // Mostrar en UTC-3 (Argentina)
+      const localHour = ((dt.getUTCHours() - 3) + 24) % 24;
+      const localMin  = dt.getUTCMinutes().toString().padStart(2, '0');
+      updateEl.textContent = `Últ. actualización: ${dt.getUTCDate()} ${MONTHS_SHORT[dt.getUTCMonth()]} ${dt.getUTCFullYear()}, ${localHour}:${localMin} hs`;
+    }
+
+    // Próximo partido
+    const nextMatchEl = document.getElementById('overlay-next-match');
+    if (nextMatchEl) {
+      const nextMatch = [...data.matches]
+        .filter(m => m.status === 'scheduled')
+        .sort((a, b) => new Date(a.date) - new Date(b.date))[0];
+
+      if (nextMatch) {
+        const d   = new Date(nextMatch.date);
+        const arg = new Date(d.getTime() - 3 * 60 * 60 * 1000); // UTC-3 Argentina
+        const hh  = arg.getUTCHours().toString().padStart(2, '0');
+        const mm  = arg.getUTCMinutes().toString().padStart(2, '0');
+        const dateLabel = `${arg.getUTCDate()} ${MONTHS_SHORT[arg.getUTCMonth()]} • ${hh}:${mm} hs (ARG)`;
+        nextMatchEl.innerHTML = `
+          <span class="overlay-next-label">Próximo partido</span>
+          <div class="overlay-next-teams">
+            <span class="overlay-next-team">${flagImg(nextMatch.homeTeam, 'w20')} ${nextMatch.homeTeam}</span>
+            <span class="overlay-next-vs">vs</span>
+            <span class="overlay-next-team">${nextMatch.awayTeam} ${flagImg(nextMatch.awayTeam, 'w20')}</span>
+          </div>
+          <span class="overlay-next-details">${dateLabel} | ${nextMatch.venue}</span>
+        `;
+      }
     }
 
   } catch (error) {

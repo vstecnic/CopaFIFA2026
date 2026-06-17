@@ -13,7 +13,7 @@ const ISO3_TO_ISO2 = {
 
 // Returns an <img> HTML string for a country flag from flagcdn.com
 // size: 'w20' | 'w40' | 'w80' (width in px, height proportional ~3:4)
-function flagImg(iso3, size = 'w40') {
+export function flagImg(iso3, size = 'w40') {
   const code = ISO3_TO_ISO2[iso3];
   if (!code) return '';
   return `<img src="https://flagcdn.com/${size}/${code}.webp" class="flag-img" alt="${iso3}" loading="lazy">`;
