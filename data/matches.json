@@ -1000,8 +1000,15 @@
     "awayTeam": "COD",
     "date": "2026-06-17T17:00:00Z",
     "venue": "NRG Stadium, Houston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "João Neves", "playerId": "", "minute": 6, "team": "PRT", "wikiName": "João_Neves_(footballer,_born_2004)" },
+        { "name": "Yoane Wissa", "playerId": "", "minute": 50, "team": "COD", "wikiName": "Yoane_Wissa" }
+      ]
+    }
   },
   {
     "id": "match_K_2",

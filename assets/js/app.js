@@ -47,7 +47,7 @@ async function bootstrap() {
     // Última actualización de datos
     const updateEl = document.getElementById('overlay-update-text');
     if (updateEl) {
-      const lastUpdated = data.dataLastUpdated || '2026-06-17T14:30:00Z';
+      const lastUpdated = data.dataLastUpdated || '2026-06-17T20:00:00Z';
       const dt = new Date(lastUpdated);
       // Mostrar en UTC-3 (Argentina)
       const localHour = ((dt.getUTCHours() - 3) + 24) % 24;
@@ -58,8 +58,9 @@ async function bootstrap() {
     // Próximo partido
     const nextMatchEl = document.getElementById('overlay-next-match');
     if (nextMatchEl) {
+      const now = new Date();
       const nextMatch = [...data.matches]
-        .filter(m => m.status === 'scheduled')
+        .filter(m => m.status === 'scheduled' && new Date(m.date) > now)
         .sort((a, b) => new Date(a.date) - new Date(b.date))[0];
 
       if (nextMatch) {
