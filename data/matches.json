@@ -866,11 +866,13 @@
     "status": "played",
     "result": {
       "homeScore": 1,
-      "awayScore": 2,
+      "awayScore": 4,
       "scorers": [
         { "name": "Erling Haaland", "playerId": "", "minute": 29, "team": "NOR", "wikiName": "Erling_Haaland" },
         { "name": "Aymen Hussein", "playerId": "", "minute": 39, "team": "IRQ", "wikiName": "Aymen_Hussein" },
-        { "name": "Erling Haaland", "playerId": "", "minute": 43, "team": "NOR", "wikiName": "Erling_Haaland" }
+        { "name": "Erling Haaland", "playerId": "", "minute": 43, "team": "NOR", "wikiName": "Erling_Haaland" },
+        { "name": "Leo Østigård", "playerId": "", "minute": 76, "team": "NOR", "wikiName": "Leo_Østigård" },
+        { "name": "Aymen Hussein (autogol)", "playerId": "", "minute": 96, "team": "NOR", "wikiName": "Aymen_Hussein" }
       ]
     }
   },
