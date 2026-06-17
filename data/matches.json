@@ -941,8 +941,17 @@
     "awayTeam": "JOR",
     "date": "2026-06-16T19:00:00Z",
     "venue": "Levi's Stadium, San Francisco",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Romano Schmid", "playerId": "", "minute": 20, "team": "AUT", "wikiName": "Romano_Schmid" },
+        { "name": "Ali Olwan", "playerId": "", "minute": 50, "team": "JOR", "wikiName": "Ali_Olwan" },
+        { "name": "Yazan Alarab (autogol)", "playerId": "", "minute": 76, "team": "AUT", "wikiName": "Yazan_Al-Arab" },
+        { "name": "Marko Arnautovic", "playerId": "", "minute": 102, "team": "AUT", "wikiName": "Marko_Arnautovic" }
+      ]
+    }
   },
   {
     "id": "match_J_3",
