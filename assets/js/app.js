@@ -46,8 +46,9 @@ async function bootstrap() {
 
     // Última actualización de datos
     const updateEl = document.getElementById('overlay-update-text');
-    if (updateEl && data.dataLastUpdated) {
-      const dt = new Date(data.dataLastUpdated);
+    if (updateEl) {
+      const lastUpdated = data.dataLastUpdated || '2026-06-17T04:10:00Z';
+      const dt = new Date(lastUpdated);
       // Mostrar en UTC-3 (Argentina)
       const localHour = ((dt.getUTCHours() - 3) + 24) % 24;
       const localMin  = dt.getUTCMinutes().toString().padStart(2, '0');
@@ -102,10 +103,14 @@ async function getTournamentData() {
   const cachedTime = localStorage.getItem(CACHE_KEY_TIME);
   const now = Date.now();
 
-  // If cache exists and is less than 12 hours old, return it
+  // If cache exists, is less than 12 hours old, and has dataLastUpdated, return it
   if (cachedData && cachedTime && (now - parseInt(cachedTime, 10) < CACHE_EXPIRATION_MS)) {
-    console.log('Caché local válido detectado (< 12hs). Cargando datos de LocalStorage...');
-    return JSON.parse(cachedData);
+    const parsed = JSON.parse(cachedData);
+    if (parsed.dataLastUpdated) {
+      console.log('Caché local válido detectado (< 12hs). Cargando datos de LocalStorage...');
+      return parsed;
+    }
+    console.log('Caché desactualizado (sin dataLastUpdated). Refrescando...');
   }
 
   // Cache is missing or expired -> Fetch fresh data from backend
