@@ -47,7 +47,7 @@ async function bootstrap() {
     // Última actualización de datos
     const updateEl = document.getElementById('overlay-update-text');
     if (updateEl) {
-      const lastUpdated = data.dataLastUpdated || '2026-06-18T13:30:00Z';
+      const lastUpdated = data.dataLastUpdated || '2026-06-18T20:30:00Z';
       const dt = new Date(lastUpdated);
       // Mostrar en UTC-3 (Argentina)
       const localHour = ((dt.getUTCHours() - 3) + 24) % 24;

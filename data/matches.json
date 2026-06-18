@@ -81,8 +81,15 @@
     "awayTeam": "ZAF",
     "date": "2026-06-18T16:00:00Z",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Michal Sadílek", "playerId": "", "minute": 6, "team": "CZE", "wikiName": "Michal_Sadílek" },
+        { "name": "Teboho Mokoena", "playerId": "", "minute": 83, "team": "ZAF", "wikiName": "Teboho_Mokoena" }
+      ]
+    }
   },
   {
     "id": "match_A_5",
@@ -167,7 +174,7 @@
     "group": "B",
     "homeTeam": "CAN",
     "awayTeam": "QAT",
-    "date": "2026-06-18T19:00:00Z",
+    "date": "2026-06-18T22:00:00Z",
     "venue": "BC Place, Vancouver",
     "status": "scheduled",
     "result": null
@@ -177,10 +184,20 @@
     "group": "B",
     "homeTeam": "CHE",
     "awayTeam": "BIH",
-    "date": "2026-06-18T22:00:00Z",
+    "date": "2026-06-18T19:00:00Z",
     "venue": "SoFi Stadium, Los Angeles",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 4,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Johan Manzambi", "playerId": "", "minute": 74, "team": "CHE", "wikiName": "Johan_Manzambi" },
+        { "name": "Rubén Vargas", "playerId": "", "minute": 84, "team": "CHE", "wikiName": "Rubén_Vargas_(footballer)" },
+        { "name": "Johan Manzambi", "playerId": "", "minute": 90, "team": "CHE", "wikiName": "Johan_Manzambi" },
+        { "name": "Ermin Mahmić", "playerId": "", "minute": 93, "team": "BIH", "wikiName": "Ermin_Mahmić" },
+        { "name": "Granit Xhaka", "playerId": "", "minute": 97, "team": "CHE", "wikiName": "Granit_Xhaka" }
+      ]
+    }
   },
   {
     "id": "match_B_5",
