@@ -1088,8 +1088,14 @@
     "awayTeam": "PAN",
     "date": "2026-06-17T22:00:00Z",
     "venue": "BMO Field, Toronto",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Caleb Yirenkyi", "playerId": "", "minute": 94, "team": "GHA", "wikiName": "Caleb_Yirenkyi" }
+      ]
+    }
   },
   {
     "id": "match_L_3",
