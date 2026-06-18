@@ -1067,8 +1067,19 @@
     "awayTeam": "HRV",
     "date": "2026-06-17T19:00:00Z",
     "venue": "AT&T Stadium, Dallas",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 4,
+      "awayScore": 2,
+      "scorers": [
+        { "name": "Harry Kane", "playerId": "", "minute": 12, "team": "GBR", "wikiName": "Harry_Kane" },
+        { "name": "Martin Baturina", "playerId": "", "minute": 36, "team": "HRV", "wikiName": "Martin_Baturina" },
+        { "name": "Harry Kane", "playerId": "", "minute": 42, "team": "GBR", "wikiName": "Harry_Kane" },
+        { "name": "Petar Musa", "playerId": "", "minute": 50, "team": "HRV", "wikiName": "Petar_Musa" },
+        { "name": "Jude Bellingham", "playerId": "", "minute": 47, "team": "GBR", "wikiName": "Jude_Bellingham" },
+        { "name": "Marcus Rashford", "playerId": "", "minute": 85, "team": "GBR", "wikiName": "Marcus_Rashford" }
+      ]
+    }
   },
   {
     "id": "match_L_2",
