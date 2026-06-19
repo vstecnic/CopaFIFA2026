@@ -71,8 +71,14 @@
     "awayTeam": "KOR",
     "date": "2026-06-19T02:00:00Z",
     "venue": "Estadio Akron, Zapopan",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Luis Romo", "playerId": "", "minute": 50, "team": "MEX", "wikiName": "Luis_Romo" }
+      ]
+    }
   },
   {
     "id": "match_A_4",
@@ -176,8 +182,19 @@
     "awayTeam": "QAT",
     "date": "2026-06-18T22:00:00Z",
     "venue": "BC Place, Vancouver",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 6,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Cyle Larin", "playerId": "", "minute": 16, "team": "CAN", "wikiName": "Cyle_Larin" },
+        { "name": "Jonathan David", "playerId": "", "minute": 29, "team": "CAN", "wikiName": "Jonathan_David_(Canadian_footballer)" },
+        { "name": "Jonathan David", "playerId": "", "minute": 48, "team": "CAN", "wikiName": "Jonathan_David_(Canadian_footballer)" },
+        { "name": "Nathan Saliba", "playerId": "", "minute": 64, "team": "CAN", "wikiName": "Nathan_Saliba" },
+        { "name": "Mohamed Al Manai (autogol)", "playerId": "", "minute": 75, "team": "CAN", "wikiName": "Mohamed_Al-Manai" },
+        { "name": "Jonathan David", "playerId": "", "minute": 92, "team": "CAN", "wikiName": "Jonathan_David_(Canadian_footballer)" }
+      ]
+    }
   },
   {
     "id": "match_B_4",
@@ -275,7 +292,7 @@
     "group": "C",
     "homeTeam": "BRA",
     "awayTeam": "HTI",
-    "date": "2026-06-19T22:00:00Z",
+    "date": "2026-06-20T01:00:00Z",
     "venue": "Lincoln Financial Field, Philadelphia",
     "status": "scheduled",
     "result": null
@@ -285,7 +302,7 @@
     "group": "C",
     "homeTeam": "SCO",
     "awayTeam": "MAR",
-    "date": "2026-06-19T19:00:00Z",
+    "date": "2026-06-19T22:00:00Z",
     "venue": "Gillette Stadium, Boston",
     "status": "scheduled",
     "result": null
@@ -394,7 +411,7 @@
     "group": "D",
     "homeTeam": "USA",
     "awayTeam": "AUS",
-    "date": "2026-06-19T22:00:00Z",
+    "date": "2026-06-19T19:00:00Z",
     "venue": "Lumen Field, Seattle",
     "status": "scheduled",
     "result": null
@@ -404,7 +421,7 @@
     "group": "D",
     "homeTeam": "TUR",
     "awayTeam": "PRY",
-    "date": "2026-06-19T19:00:00Z",
+    "date": "2026-06-19T22:00:00Z",
     "venue": "Levi's Stadium, San Francisco",
     "status": "scheduled",
     "result": null
