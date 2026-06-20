@@ -294,8 +294,16 @@
     "awayTeam": "HTI",
     "date": "2026-06-20T01:00:00Z",
     "venue": "Lincoln Financial Field, Philadelphia",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Matheus Cunha", "playerId": "", "minute": 23, "team": "BRA", "wikiName": "Matheus_Cunha" },
+        { "name": "Matheus Cunha", "playerId": "", "minute": 36, "team": "BRA", "wikiName": "Matheus_Cunha" },
+        { "name": "Vinícius Júnior", "playerId": "", "minute": 48, "team": "BRA", "wikiName": "Vinicius_Jr" }
+      ]
+    }
   },
   {
     "id": "match_C_4",
@@ -304,8 +312,14 @@
     "awayTeam": "MAR",
     "date": "2026-06-19T22:00:00Z",
     "venue": "Gillette Stadium, Boston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Ismael Saibari", "playerId": "", "minute": 1, "team": "MAR", "wikiName": "Ismael_Saibari" }
+      ]
+    }
   },
   {
     "id": "match_C_5",
@@ -413,8 +427,15 @@
     "awayTeam": "AUS",
     "date": "2026-06-19T19:00:00Z",
     "venue": "Lumen Field, Seattle",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Cameron Burgess (autogol)", "playerId": "", "minute": 11, "team": "USA", "wikiName": "Cameron_Burgess" },
+        { "name": "Alex Freeman", "playerId": "", "minute": 43, "team": "USA", "wikiName": "Alex_Freeman_(footballer)" }
+      ]
+    }
   },
   {
     "id": "match_D_4",
@@ -423,8 +444,14 @@
     "awayTeam": "PRY",
     "date": "2026-06-19T22:00:00Z",
     "venue": "Levi's Stadium, San Francisco",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Matías Galarza", "playerId": "", "minute": 1, "team": "PRY", "wikiName": "Matías_Galarza" }
+      ]
+    }
   },
   {
     "id": "match_D_5",
