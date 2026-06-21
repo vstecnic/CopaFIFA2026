@@ -566,8 +566,16 @@
     "awayTeam": "CIV",
     "date": "2026-06-20T19:00:00Z",
     "venue": "BMO Field, Toronto",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Franck Kessié", "playerId": "", "minute": 30, "team": "CIV", "wikiName": "Franck_Kessié" },
+        { "name": "Deniz Undav", "playerId": "", "minute": 68, "team": "DEU", "wikiName": "Deniz_Undav" },
+        { "name": "Deniz Undav", "playerId": "", "minute": 94, "team": "DEU", "wikiName": "Deniz_Undav" }
+      ]
+    }
   },
   {
     "id": "match_E_4",
@@ -706,8 +714,19 @@
     "awayTeam": "SWE",
     "date": "2026-06-20T17:00:00Z",
     "venue": "NRG Stadium, Houston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 5,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Brian Brobbey", "playerId": "", "minute": 5, "team": "NLD", "wikiName": "Brian_Brobbey" },
+        { "name": "Brian Brobbey", "playerId": "", "minute": 17, "team": "NLD", "wikiName": "Brian_Brobbey" },
+        { "name": "Cody Gakpo", "playerId": "", "minute": 47, "team": "NLD", "wikiName": "Cody_Gakpo" },
+        { "name": "Cody Gakpo", "playerId": "", "minute": 54, "team": "NLD", "wikiName": "Cody_Gakpo" },
+        { "name": "Anthony Elanga", "playerId": "", "minute": 59, "team": "SWE", "wikiName": "Anthony_Elanga" },
+        { "name": "Crysencio Summerville", "playerId": "", "minute": 89, "team": "NLD", "wikiName": "Crysencio_Summerville" }
+      ]
+    }
   },
   {
     "id": "match_F_4",
@@ -716,8 +735,17 @@
     "awayTeam": "JPN",
     "date": "2026-06-20T20:00:00Z",
     "venue": "Estadio BBVA, Guadalupe",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 4,
+      "scorers": [
+        { "name": "Daichi Kamada", "playerId": "", "minute": 4, "team": "JPN", "wikiName": "Daichi_Kamada" },
+        { "name": "Ayase Ueda", "playerId": "", "minute": 31, "team": "JPN", "wikiName": "Ayase_Ueda" },
+        { "name": "Junya Ito", "playerId": "", "minute": 69, "team": "JPN", "wikiName": "Junya_Ito" },
+        { "name": "Ayase Ueda", "playerId": "", "minute": 83, "team": "JPN", "wikiName": "Ayase_Ueda" }
+      ]
+    }
   },
   {
     "id": "match_F_5",

@@ -85,7 +85,7 @@ const countries = [
 const matches = JSON.parse(readFileSync(join(process.cwd(), 'data/matches.json'), 'utf8'));
 
 // Timestamp of the last manual data update — update this each time results are loaded
-const DATA_LAST_UPDATED = '2026-06-20T04:00:00Z';
+const DATA_LAST_UPDATED = '2026-06-20T23:00:00Z';
 
 export default function handler(req, res) {
   // CORS configuration
