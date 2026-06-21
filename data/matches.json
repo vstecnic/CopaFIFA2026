@@ -584,8 +584,12 @@
     "awayTeam": "CUW",
     "date": "2026-06-20T22:00:00Z",
     "venue": "Arrowhead Stadium, Kansas City",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 0,
+      "scorers": []
+    }
   },
   {
     "id": "match_E_5",
