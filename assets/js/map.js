@@ -14,6 +14,11 @@ const GROUP_COLORS = {
 const BORDER_COLOR = '#222d44';
 const BG_DEEP = '#0a0f1d';
 
+// Mapeo de códigos ISO alternativos en GeoJSON (ej: Natural Earth usa CV para Cabo Verde, pero FIFA usa CPV)
+const ISO_CODE_MAPPING = {
+  'CV': 'CPV',  // Cabo Verde
+};
+
 // Non-participant territories that should inherit a group's color.
 // parent: the participant ISO whose hover should also highlight this territory.
 const TERRITORY_GROUP_OVERRIDE = {
@@ -75,7 +80,9 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
     geojsonLayer = L.geoJSON(geojsonData, {
       style: (feature) => {
         // Resolve ISO_A3 in properties
-        const iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
+        let iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
+        // Apply ISO code mapping for alternative codes in GeoJSON
+        iso = ISO_CODE_MAPPING[iso] || iso;
         const isParticipant = participantIds.has(iso);
         const override = TERRITORY_GROUP_OVERRIDE[iso];
 
@@ -111,7 +118,9 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
         }
       },
       onEachFeature: (feature, layer) => {
-        const iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
+        let iso = (feature.properties.ISO_A3 || feature.properties.iso_a3 || '').toUpperCase();
+        // Apply ISO code mapping for alternative codes in GeoJSON
+        iso = ISO_CODE_MAPPING[iso] || iso;
         const isParticipant = participantIds.has(iso);
         const isTerritory = !!TERRITORY_GROUP_OVERRIDE[iso];
 
