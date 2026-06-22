@@ -19,6 +19,11 @@ const ISO_CODE_MAPPING = {
   'CV': 'CPV',  // Cabo Verde
 };
 
+// Coordenadas de islas pequeñas para marcadores circulares más visibles
+const SMALL_ISLAND_MARKERS = {
+  'CPV': { lat: 16.5388, lng: -23.0418, radius: 150000 } // Cabo Verde
+};
+
 // Non-participant territories that should inherit a group's color.
 // parent: the participant ISO whose hover should also highlight this territory.
 const TERRITORY_GROUP_OVERRIDE = {
@@ -179,6 +184,34 @@ export async function loadCountryPolygons(participatingCountries, onCountryClick
         }
       }
     }).addTo(map);
+
+    // Draw circles for small islands that may not be visible in GeoJSON
+    for (const [iso, marker] of Object.entries(SMALL_ISLAND_MARKERS)) {
+      if (participantIds.has(iso)) {
+        const color = GROUP_COLORS[groupByCountry[iso]] || '#00d2ff';
+        const countryObj = participatingCountries.find(c => c.id === iso);
+        const circle = L.circle([marker.lat, marker.lng], {
+          radius: marker.radius,
+          color: color,
+          weight: 2,
+          opacity: 1,
+          fillColor: color,
+          fillOpacity: 0.25
+        }).addTo(map);
+
+        if (countryObj) {
+          circle.bindTooltip(`<b>${countryObj.name}</b> (Grupo ${countryObj.group})`, {
+            direction: 'top',
+            sticky: true,
+            className: 'map-tooltip'
+          });
+        }
+
+        circle.on('click', () => {
+          onCountryClick(iso);
+        });
+      }
+    }
 
   } catch (error) {
     console.error('Error al cargar datos del mapa:', error);
