@@ -188,7 +188,7 @@
       "awayScore": 0,
       "scorers": [
         { "name": "Cyle Larin", "playerId": "", "minute": 16, "team": "CAN", "wikiName": "Cyle_Larin" },
-        { "name": "Jonathan David", "playerId": "", "minute": 29, "team": "CAN", "wikiName": "Jonathan_David_(Canadian_footballer)" },
+        { "name": "Jonathan David", "playerId": "", "minute": 29, "team": "CAN", "wikiName": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Jonathan_David_asse_losc_2425_%28cropped%29.jpg/250px-Jonathan_David_asse_losc_2425_%28cropped%29.jpg" },
         { "name": "Jonathan David", "playerId": "", "minute": 48, "team": "CAN", "wikiName": "Jonathan_David_(Canadian_footballer)" },
         { "name": "Nathan Saliba", "playerId": "", "minute": 64, "team": "CAN", "wikiName": "Nathan_Saliba" },
         { "name": "Mohamed Al Manai (autogol)", "playerId": "", "minute": 75, "team": "CAN", "wikiName": "Mohamed_Al-Manai" },
@@ -1118,7 +1118,7 @@
     "awayTeam": "DZA",
     "date": "2026-06-23T03:00:00Z",
     "venue": "Levi's Stadium, San Francisco",
-    "status": "played",
+    "status": "scheduled",
     "result": {
       "homeScore": 1,
       "awayScore": 0,

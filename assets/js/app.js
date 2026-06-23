@@ -1,7 +1,8 @@
 // assets/js/app.js
 
 import { initMap, loadCountryPolygons, focusCountry } from './map.js';
-import { initUI, openCountryDetailsModal, flagImg } from './ui.js';
+import { initUI, openCountryDetailsModal, flagImg, initViewToggle } from './ui.js';
+import { initStatsView } from './stats.js';
 
 // Cache key constants
 const CACHE_KEY_DATA = 'wc2026_tournament_data';
@@ -32,6 +33,12 @@ async function bootstrap() {
 
     // 5. Setup sidebar listings, events, and search triggers
     initUI(data, handleCountrySelection);
+
+    // 5.2 Initialize view toggle buttons
+    initViewToggle();
+
+    // 5.5 Initialize statistics view with flag images
+    initStatsView(data, flagImg);
 
     // 6. Update map overlays
     const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];

@@ -1042,6 +1042,211 @@ body, html {
   transition: color 0.3s ease;
 }
 
+/* View Toggle Buttons */
+.view-toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  margin-top: 0.75rem;
+}
+
+.view-btn {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-bezier);
+  font-family: var(--font-body);
+}
+
+.view-btn:hover {
+  background-color: var(--bg-panel-hover);
+  color: var(--accent-color);
+}
+
+.view-btn.active {
+  background-color: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+}
+
+/* Statistics View */
+.stats-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  padding: 1.5rem 1rem;
+}
+
+#standings-container {
+  margin-bottom: 2rem;
+}
+
+.standings-group {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.group-title {
+  background-color: var(--bg-panel-hover);
+  padding: 0.75rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.standings-table {
+  width: 100%;
+  font-size: 0.75rem;
+  border-collapse: collapse;
+}
+
+.standings-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.standings-table td:first-child {
+  text-align: left;
+}
+
+.standings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.standings-table tr:hover {
+  background-color: var(--bg-panel-hover);
+}
+
+.country-flag {
+  width: 1.25rem;
+  height: 0.85rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Stats Toggle Buttons (Standings/Scorers) */
+.stats-toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stats-tab-btn {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-bezier);
+  font-family: var(--font-body);
+}
+
+.stats-tab-btn:hover {
+  background-color: var(--bg-panel-hover);
+  color: var(--accent-color);
+}
+
+.stats-tab-btn.active {
+  background-color: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+}
+
+.stats-tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scorers Section */
+.scorers-section {
+  border-top: none;
+  padding-top: 0;
+}
+
+.scorers-title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.scorer-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--bg-panel-hover);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.scorer-rank {
+  font-weight: 700;
+  color: var(--accent-color);
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.scorer-photo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.scorer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.scorer-name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scorer-country {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.scorer-goals {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  min-width: 1.5rem;
+  text-align: right;
+}
+
 /* Responsive adjustment for Mobile viewports */
 @media (max-width: 768px) {
   .app-container {

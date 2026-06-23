@@ -45,14 +45,39 @@
           <input type="text" id="search-input" placeholder="Buscar país participante..." autocomplete="off">
           <span class="search-icon">🔍</span>
         </div>
+
+        <!-- View toggle buttons -->
+        <div class="view-toggle-buttons">
+          <button class="view-btn active" id="btn-list-view" data-view="list">📋 Lista de países</button>
+          <button class="view-btn" id="btn-stats-view" data-view="stats">📊 Estadísticas</button>
+        </div>
       </header>
-      
+
       <!-- Scrollable list of 48 countries -->
       <div class="countries-list" id="countries-list" aria-label="Países Participantes">
         <!-- Rendered dynamically by assets/js/ui.js -->
         <div class="loading-state">
           <div class="spinner"></div>
           <p>Cargando países y estadísticas...</p>
+        </div>
+      </div>
+
+      <!-- Statistics view (hidden by default) -->
+      <div class="stats-view" id="stats-view" style="display: none;">
+        <!-- Standings/Scorers toggle buttons -->
+        <div class="stats-toggle-buttons">
+          <button class="stats-tab-btn active" id="btn-standings-tab" data-tab="standings">📊 Tabla de Puntuaciones</button>
+          <button class="stats-tab-btn" id="btn-scorers-tab" data-tab="scorers">🏅 Goleadores</button>
+        </div>
+
+        <!-- Standings table view -->
+        <div class="stats-tab-content" id="tab-standings" style="display: block;">
+          <div id="standings-container"></div>
+        </div>
+
+        <!-- Top scorers view -->
+        <div class="stats-tab-content" id="tab-scorers" style="display: none;">
+          <div id="top-scorers-container"></div>
         </div>
       </div>
 

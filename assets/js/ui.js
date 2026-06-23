@@ -431,3 +431,29 @@ function openMatchDetailModal(match) {
 
   showModal(matchDetailsModal);
 }
+
+/**
+ * Initialize view toggle buttons for List/Stats
+ */
+export function initViewToggle() {
+  const listBtn = document.getElementById('btn-list-view');
+  const statsBtn = document.getElementById('btn-stats-view');
+  const countriesList = document.getElementById('countries-list');
+  const statsView = document.getElementById('stats-view');
+
+  if (listBtn && statsBtn && countriesList && statsView) {
+    listBtn.addEventListener('click', () => {
+      countriesList.style.display = 'block';
+      statsView.style.display = 'none';
+      listBtn.classList.add('active');
+      statsBtn.classList.remove('active');
+    });
+
+    statsBtn.addEventListener('click', () => {
+      countriesList.style.display = 'none';
+      statsView.style.display = 'flex';
+      statsBtn.classList.add('active');
+      listBtn.classList.remove('active');
+    });
+  }
+}

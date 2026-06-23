@@ -10,6 +10,47 @@
  *
  * Requires:
  *   FOOTBALL_API_KEY env var (free key from https://www.football-data.org/client/register)
+ *
+ * OUTPUT DATA STRUCTURE (matches.json):
+ * Each match object contains:
+ * - id: unique match identifier (match_[GROUP]_[NUM])
+ * - group: tournament group (A-L)
+ * - homeTeam / awayTeam: ISO 3-letter country codes (e.g., "ARG", "ESP")
+ * - date: UTC timestamp (ISO 8601)
+ * - venue: stadium name
+ * - status: "played" or "scheduled"
+ * - result: { homeScore, awayScore, scorers[] }
+ *
+ * SCORERS OBJECT:
+ * Each scorer in the result.scorers array contains:
+ * - name: player full name (e.g., "Lionel Messi")
+ * - minute: goal time (e.g., 38, 90)
+ * - team: ISO code of scoring team
+ * - wikiName: Wikipedia page name OR direct Wikimedia Commons image URL
+ *   (URLs starting with 'https://' are loaded directly, others via Wikipedia API)
+ *
+ * IMPORTANT FOR NEW FEATURES:
+ * 1. TABLA DE PUNTUACIONES (Standings):
+ *    - Stats are auto-calculated from matches with status="played"
+ *    - Points: Win=3, Draw=1, Loss=0
+ *    - Displayed in assets/js/stats.js → renderStandings()
+ *
+ * 2. TOP 10 GOLEADORES (Top Scorers):
+ *    - Extracted from result.scorers[] arrays
+ *    - Player photos loaded from wikiName field
+ *    - Displayed in assets/js/stats.js → renderTopScorers()
+ *    - If wikiName is a URL, used directly; otherwise fetched from Wikipedia
+ *
+ * 3. PRÓXIMO PARTIDO (Next Match Modal):
+ *    - Shown in map overlay (assets/js/app.js)
+ *    - Filters: first match with status="scheduled" after last "played" match
+ *    - Displays at: assets/js/app.js lines 73-91
+ *
+ * UPDATING DATA AFTER SCRIPT RUN:
+ * 1. Verify all matches marked as "played" in matches.json
+ * 2. For missing player photos: manually add direct Wikimedia URL to wikiName field
+ * 3. Update api/scores.js DATA_LAST_UPDATED timestamp after script completes
+ * 4. Commit: "feat: resultados [DATE]: [TEAMS/SCORES], goleadores y fotos"
  */
 
 import { readFileSync, writeFileSync } from 'fs';
