@@ -512,8 +512,11 @@ body, html {
 /* Modal Headers */
 .country-badge {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
 }
 
 .country-flag {
@@ -533,6 +536,8 @@ body, html {
   font-size: 1.75rem;
   color: var(--text-main);
   text-shadow: 0 0 15px var(--accent-glow);
+  margin: 0;
+  text-align: center;
 }
 
 .modal-subtitle {
