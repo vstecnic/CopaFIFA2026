@@ -98,9 +98,41 @@
     <!-- Contenedor del Mapa (Resto de la pantalla) -->
     <main class="map-wrapper">
       <div id="map" aria-label="Mapa Geográfico Mundial Interactivo"></div>
-      
+
       <!-- Próximo partido (centro-inferior del mapa) -->
       <div class="map-overlay-next" id="overlay-next-match"></div>
+
+      <!-- Floating Action Buttons (Mobile) -->
+      <div class="mobile-fab-container">
+        <button class="mobile-fab" id="fab-list" title="Lista de Países">📋</button>
+        <button class="mobile-fab" id="fab-stats" title="Estadísticas">📊</button>
+      </div>
+
+      <!-- Mobile Modals (Floating Overlays) -->
+      <div class="mobile-modal" id="mobile-list-modal" style="display: none;">
+        <div class="mobile-modal-header">
+          <h2>Lista de Países</h2>
+          <button class="mobile-modal-close" id="close-list-modal">✕</button>
+        </div>
+        <div class="mobile-modal-content">
+          <div id="mobile-countries-list"></div>
+        </div>
+      </div>
+
+      <div class="mobile-modal" id="mobile-stats-modal" style="display: none;">
+        <div class="mobile-modal-header">
+          <div class="mobile-modal-tabs">
+            <button class="mobile-modal-tab active" id="mobile-standings-btn">📊 Tabla</button>
+            <button class="mobile-modal-tab" id="mobile-scorers-btn">🏅 Goleadores</button>
+          </div>
+          <button class="mobile-modal-close" id="close-stats-modal">✕</button>
+        </div>
+        <div class="mobile-modal-content">
+          <div id="mobile-standings-view" style="display: block;"></div>
+          <div id="mobile-scorers-view" style="display: none;"></div>
+        </div>
+      </div>
+    </main>
 
       <!-- Estado mundial (inferior derecho) -->
       <div class="map-overlay-info">

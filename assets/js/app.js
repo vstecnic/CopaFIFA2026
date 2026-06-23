@@ -2,7 +2,8 @@
 
 import { initMap, loadCountryPolygons, focusCountry } from './map.js';
 import { initUI, openCountryDetailsModal, flagImg, initViewToggle } from './ui.js';
-import { initStatsView } from './stats.js';
+import { initStatsView, calculateGroupStandings, getTopScorers, renderStandings, renderTopScorers } from './stats.js';
+import { initMobileUI } from './mobile-ui.js';
 
 // Cache key constants
 const CACHE_KEY_DATA = 'wc2026_tournament_data';
@@ -39,6 +40,10 @@ async function bootstrap() {
 
     // 5.5 Initialize statistics view with flag images
     initStatsView(data, flagImg);
+
+    // 5.6 Initialize mobile UI (floating modals)
+    window.statsModule = { calculateGroupStandings, getTopScorers, renderStandings, renderTopScorers };
+    initMobileUI(data, flagImg, data.countries);
 
     // 6. Update map overlays
     const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
