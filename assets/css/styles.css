@@ -1384,6 +1384,23 @@ body, html {
   background-color: var(--bg-panel-hover);
   border-radius: 8px;
   border: 1px solid var(--border-color);
+  transition: var(--transition-bezier);
+  cursor: pointer;
+}
+
+.mobile-country-item:active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: scale(0.98);
+}
+
+.mobile-country-item:active .mobile-country-name,
+.mobile-country-item:active .mobile-country-group {
+  color: #000;
+}
+
+.mobile-country-item:active .mobile-country-stars {
+  color: #000;
 }
 
 .mobile-country-flag {

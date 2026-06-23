@@ -3,7 +3,7 @@
 /**
  * Inicializa los controles de modales flotantes para mobile
  */
-export function initMobileUI(data, flagImgFn, countries) {
+export function initMobileUI(data, flagImgFn, countries, onCountryClick) {
   const fabList = document.getElementById('fab-list');
   const fabStats = document.getElementById('fab-stats');
   const listModal = document.getElementById('mobile-list-modal');
@@ -15,7 +15,7 @@ export function initMobileUI(data, flagImgFn, countries) {
   if (fabList) {
     fabList.addEventListener('click', () => {
       listModal.classList.add('active');
-      populateMobileCountriesList(countries, flagImgFn);
+      populateMobileCountriesList(countries, flagImgFn, onCountryClick, listModal);
     });
   }
 
@@ -65,7 +65,7 @@ export function initMobileUI(data, flagImgFn, countries) {
 /**
  * Rellena la lista de países en mobile
  */
-function populateMobileCountriesList(countries, flagImgFn) {
+function populateMobileCountriesList(countries, flagImgFn, onCountryClick, listModal) {
   const container = document.getElementById('mobile-countries-list');
   if (!container) return;
 
@@ -82,6 +82,21 @@ function populateMobileCountriesList(countries, flagImgFn) {
       </div>
       <div class="mobile-country-stars">⭐ ${country.stats?.titles || 0}</div>
     `;
+
+    // Agregar listener de click para abrir detalles del país
+    div.addEventListener('click', () => {
+      if (onCountryClick) {
+        onCountryClick(country.id);
+      }
+      // Cerrar el modal de lista de países
+      if (listModal) {
+        listModal.classList.remove('active');
+      }
+    });
+
+    // Cursor pointer para indicar que es clickeable
+    div.style.cursor = 'pointer';
+
     container.appendChild(div);
   });
 }

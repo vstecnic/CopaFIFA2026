@@ -43,7 +43,7 @@ async function bootstrap() {
 
     // 5.6 Initialize mobile UI (floating modals)
     window.statsModule = { calculateGroupStandings, getTopScorers, renderStandings, renderTopScorers };
-    initMobileUI(data, flagImg, data.countries);
+    initMobileUI(data, flagImg, data.countries, handleCountrySelection);
 
     // 6. Update map overlays
     const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
