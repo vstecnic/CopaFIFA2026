@@ -85,13 +85,21 @@ function populateMobileCountriesList(countries, flagImgFn, onCountryClick, listM
 
     // Agregar listener de click para abrir detalles del país
     div.addEventListener('click', () => {
-      if (onCountryClick) {
-        onCountryClick(country.id);
-      }
-      // Cerrar el modal de lista de países
+      // Cerrar el modal de lista de países primero
       if (listModal) {
         listModal.classList.remove('active');
       }
+      // Cerrar el modal de estadísticas también si está abierto
+      const statsModal = document.getElementById('mobile-stats-modal');
+      if (statsModal) {
+        statsModal.classList.remove('active');
+      }
+      // Pequeño delay para cerrar modales antes de abrir detalles
+      setTimeout(() => {
+        if (onCountryClick) {
+          onCountryClick(country.id);
+        }
+      }, 100);
     });
 
     // Cursor pointer para indicar que es clickeable
