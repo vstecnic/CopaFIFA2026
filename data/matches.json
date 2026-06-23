@@ -1007,8 +1007,16 @@
     "awayTeam": "IRQ",
     "date": "2026-06-22T19:00:00Z",
     "venue": "Lincoln Financial Field, Philadelphia",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Kylian Mbappé", "playerId": "", "minute": 27, "team": "FRA", "wikiName": "Kylian_Mbappé" },
+        { "name": "Kylian Mbappé", "playerId": "", "minute": 54, "team": "FRA", "wikiName": "Kylian_Mbappé" },
+        { "name": "Ousmane Dembélé", "playerId": "", "minute": 68, "team": "FRA", "wikiName": "Ousmane_Dembélé" }
+      ]
+    }
   },
   {
     "id": "match_I_4",
@@ -1017,8 +1025,17 @@
     "awayTeam": "SEN",
     "date": "2026-06-22T22:00:00Z",
     "venue": "MetLife Stadium, New York/New Jersey",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Marcus Pedersen", "playerId": "", "minute": 43, "team": "NOR", "wikiName": "Marcus_Pedersen" },
+        { "name": "Ismaila Sarr", "playerId": "", "minute": 52, "team": "SEN", "wikiName": "Ismaila_Sarr" },
+        { "name": "Erling Haaland", "playerId": "", "minute": 56, "team": "NOR", "wikiName": "Erling_Haaland" },
+        { "name": "Erling Haaland", "playerId": "", "minute": 71, "team": "NOR", "wikiName": "Erling_Haaland" }
+      ]
+    }
   },
   {
     "id": "match_I_5",
@@ -1084,8 +1101,15 @@
     "awayTeam": "AUT",
     "date": "2026-06-22T17:00:00Z",
     "venue": "AT&T Stadium, Dallas",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Lionel Messi", "playerId": "", "minute": 38, "team": "ARG", "wikiName": "https://upload.wikimedia.org/wikipedia/commons/5/52/Lionel_Messi_playing_in_Argentina_2022_FIFA_World_Cup.jpg" },
+        { "name": "Lionel Messi", "playerId": "", "minute": 90, "team": "ARG", "wikiName": "https://upload.wikimedia.org/wikipedia/commons/5/52/Lionel_Messi_playing_in_Argentina_2022_FIFA_World_Cup.jpg" }
+      ]
+    }
   },
   {
     "id": "match_J_4",
@@ -1094,8 +1118,14 @@
     "awayTeam": "DZA",
     "date": "2026-06-23T03:00:00Z",
     "venue": "Levi's Stadium, San Francisco",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Ali Olwan", "playerId": "", "minute": 12, "team": "JOR", "wikiName": "Ali_Olwan" }
+      ]
+    }
   },
   {
     "id": "match_J_5",
