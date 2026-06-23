@@ -1528,7 +1528,24 @@ body, html {
   .match-scoreboard-large {
     gap: 0.5rem;
   }
-  
+
+  .scoreboard-team {
+    width: 35%;
+    gap: 0.3rem;
+  }
+
+  .detail-flag .flag-img {
+    height: 40px;
+    width: auto;
+  }
+
+  .detail-team-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    word-break: break-word;
+    line-height: 1.2;
+  }
+
   .scoreboard-score {
     font-size: 2.25rem;
   }
