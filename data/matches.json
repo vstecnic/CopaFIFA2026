@@ -1118,12 +1118,12 @@
     "awayTeam": "DZA",
     "date": "2026-06-23T03:00:00Z",
     "venue": "Levi's Stadium, San Francisco",
-    "status": "scheduled",
+    "status": "played",
     "result": {
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 2,
       "scorers": [
-        { "name": "Ali Olwan", "playerId": "", "minute": 12, "team": "JOR", "wikiName": "Ali_Olwan" }
+        { "name": "Amine Gouiri", "playerId": "", "minute": 45, "team": "DZA", "wikiName": "Amine_Gouiri" }
       ]
     }
   },
@@ -1190,8 +1190,18 @@
     "awayTeam": "UZB",
     "date": "2026-06-23T17:00:00Z",
     "venue": "NRG Stadium, Houston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 5,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Cristiano Ronaldo", "playerId": "", "minute": 6, "team": "PRT", "wikiName": "Cristiano_Ronaldo" },
+        { "name": "Nuno Mendes", "playerId": "", "minute": 17, "team": "PRT", "wikiName": "Nuno_Mendes_(footballer,_born_2002)" },
+        { "name": "Cristiano Ronaldo", "playerId": "", "minute": 39, "team": "PRT", "wikiName": "Cristiano_Ronaldo" },
+        { "name": "Nematov", "playerId": "", "minute": 60, "team": "UZB", "wikiName": "null" },
+        { "name": "Rafael Leão", "playerId": "", "minute": 87, "team": "PRT", "wikiName": "Rafael_Leão" }
+      ]
+    }
   },
   {
     "id": "match_K_4",
@@ -1267,8 +1277,12 @@
     "awayTeam": "GHA",
     "date": "2026-06-23T19:00:00Z",
     "venue": "Gillette Stadium, Boston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 0,
+      "scorers": []
+    }
   },
   {
     "id": "match_L_4",
@@ -1277,8 +1291,14 @@
     "awayTeam": "HRV",
     "date": "2026-06-23T22:00:00Z",
     "venue": "BMO Field, Toronto",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Ante Budimir", "playerId": "", "minute": 54, "team": "HRV", "wikiName": "Ante_Budimir" }
+      ]
+    }
   },
   {
     "id": "match_L_5",
