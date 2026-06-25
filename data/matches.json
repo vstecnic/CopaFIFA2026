@@ -104,8 +104,16 @@
     "awayTeam": "MEX",
     "date": "2026-06-24T20:00:00Z",
     "venue": "Estadio Azteca, Ciudad de México",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 3,
+      "scorers": [
+        { "name": "Mateo Chávez", "playerId": "", "minute": 47, "team": "MEX", "wikiName": "Mateo_Chávez" },
+        { "name": "Julián Quiñones", "playerId": "", "minute": 65, "team": "MEX", "wikiName": "Julián_Quiñones" },
+        { "name": "Álvaro Fidalgo", "playerId": "", "minute": 90, "team": "MEX", "wikiName": "Álvaro_Fidalgo" }
+      ]
+    }
   },
   {
     "id": "match_A_6",
@@ -114,8 +122,14 @@
     "awayTeam": "KOR",
     "date": "2026-06-24T17:00:00Z",
     "venue": "Estadio BBVA, Guadalupe",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Thapelo Maseko", "playerId": "", "minute": 63, "team": "ZAF", "wikiName": "Thapelo_Maseko" }
+      ]
+    }
   },
   {
     "id": "match_B_1",
@@ -223,8 +237,16 @@
     "awayTeam": "CAN",
     "date": "2026-06-24T19:00:00Z",
     "venue": "BC Place, Vancouver",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Rubén Vargas", "playerId": "", "minute": 46, "team": "CHE", "wikiName": "Rubén_Vargas_(footballer)" },
+        { "name": "Johan Manzambi", "playerId": "", "minute": 57, "team": "CHE", "wikiName": "Johan_Manzambi" },
+        { "name": "Promise David", "playerId": "", "minute": 76, "team": "CAN", "wikiName": "Promise_David" }
+      ]
+    }
   },
   {
     "id": "match_B_6",
@@ -328,8 +350,16 @@
     "awayTeam": "BRA",
     "date": "2026-06-24T22:00:00Z",
     "venue": "Hard Rock Stadium, Miami",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 3,
+      "scorers": [
+        { "name": "Vinicius Júnior", "playerId": "", "minute": 7, "team": "BRA", "wikiName": "Vinicius_Júnior" },
+        { "name": "Vinicius Júnior", "playerId": "", "minute": 48, "team": "BRA", "wikiName": "Vinicius_Júnior" },
+        { "name": "Matheus Cunha", "playerId": "", "minute": 60, "team": "BRA", "wikiName": "Matheus_Cunha" }
+      ]
+    }
   },
   {
     "id": "match_C_6",
@@ -338,8 +368,19 @@
     "awayTeam": "HTI",
     "date": "2026-06-24T19:00:00Z",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 4,
+      "awayScore": 2,
+      "scorers": [
+        { "name": "Achraf Hakimi", "playerId": "", "minute": 39, "team": "MAR", "wikiName": "Achraf_Hakimi" },
+        { "name": "Abdelhamid Sabiri", "playerId": "", "minute": 46, "team": "MAR", "wikiName": "Abdelhamid_Sabiri" },
+        { "name": "Nabil Bono", "playerId": "", "minute": 10, "team": "HTI", "wikiName": "null" },
+        { "name": "Wilde-Donald Isidor", "playerId": "", "minute": 43, "team": "HTI", "wikiName": "Wilde_Donald_Isidor" },
+        { "name": "Sofyan Rahimi", "playerId": "", "minute": 78, "team": "MAR", "wikiName": "Sofyan_Rahimi" },
+        { "name": "Yassin Bounou", "playerId": "", "minute": 89, "team": "MAR", "wikiName": "Yassin_Bounou" }
+      ]
+    }
   },
   {
     "id": "match_D_1",
@@ -1210,8 +1251,14 @@
     "awayTeam": "COD",
     "date": "2026-06-24T02:00:00Z",
     "venue": "Estadio Akron, Zapopan",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 0,
+      "scorers": [
+        { "name": "Daniel Muñoz", "playerId": "", "minute": 76, "team": "COL", "wikiName": "Daniel_Muñoz_(footballer)" }
+      ]
+    }
   },
   {
     "id": "match_K_5",
