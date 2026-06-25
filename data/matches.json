@@ -255,8 +255,12 @@
     "awayTeam": "QAT",
     "date": "2026-06-24T22:00:00Z",
     "venue": "Lumen Field, Seattle",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 0,
+      "scorers": []
+    }
   },
   {
     "id": "match_C_1",
