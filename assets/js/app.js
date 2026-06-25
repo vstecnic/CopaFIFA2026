@@ -67,7 +67,7 @@ async function bootstrap() {
       updateEl.textContent = `Últ. actualización: ${dt.getUTCDate()} ${MONTHS_SHORT[dt.getUTCMonth()]} ${dt.getUTCFullYear()}, ${localHour}:${localMin} hs`;
     }
 
-    // Próximo partido
+    // Próximo partido(s)
     const nextMatchEl = document.getElementById('overlay-next-match');
     if (nextMatchEl) {
       // Use the last played match date as reference (no browser-clock dependency)
@@ -75,24 +75,59 @@ async function bootstrap() {
         .filter(m => m.status === 'played')
         .reduce((max, m) => { const d = new Date(m.date); return d > max ? d : max; }, new Date(0));
 
-      const nextMatch = [...data.matches]
+      const scheduledMatches = [...data.matches]
         .filter(m => m.status === 'scheduled' && new Date(m.date) > lastPlayedDate)
-        .sort((a, b) => new Date(a.date) - new Date(b.date))[0];
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-      if (nextMatch) {
-        const d   = new Date(nextMatch.date);
+      if (scheduledMatches.length > 0) {
+        const nextMatch = scheduledMatches[0];
+        const nextMatchDate = new Date(nextMatch.date);
+
+        // Find all matches with the same date/time as the next match
+        const simultaneousMatches = scheduledMatches.filter(m =>
+          Math.abs(new Date(m.date) - nextMatchDate) < 1000 // Within 1 second
+        );
+
+        const d   = nextMatchDate;
         const arg = new Date(d.getTime() - 3 * 60 * 60 * 1000); // UTC-3 Argentina
         const hh  = arg.getUTCHours().toString().padStart(2, '0');
         const mm  = arg.getUTCMinutes().toString().padStart(2, '0');
         const dateLabel = `${arg.getUTCDate()} ${MONTHS_SHORT[arg.getUTCMonth()]} • ${hh}:${mm} hs (ARG)`;
+
+        // Build HTML for all simultaneous matches
+        let matchesHTML = '';
+        if (simultaneousMatches.length === 1) {
+          // Single match
+          matchesHTML = `
+            <div class="overlay-next-teams">
+              <span class="overlay-next-team">${flagImg(nextMatch.homeTeam, 'w20')} ${nextMatch.homeTeam}</span>
+              <span class="overlay-next-vs">vs</span>
+              <span class="overlay-next-team">${nextMatch.awayTeam} ${flagImg(nextMatch.awayTeam, 'w20')}</span>
+            </div>
+            <span class="overlay-next-details">${dateLabel} | ${nextMatch.venue}</span>
+          `;
+        } else {
+          // Multiple simultaneous matches
+          matchesHTML = `
+            <div class="overlay-next-simultaneous">
+              ${simultaneousMatches.map(match => `
+                <div class="overlay-next-match-item">
+                  <div class="overlay-next-teams">
+                    <span class="overlay-next-team">${flagImg(match.homeTeam, 'w20')} ${match.homeTeam}</span>
+                    <span class="overlay-next-vs">vs</span>
+                    <span class="overlay-next-team">${match.awayTeam} ${flagImg(match.awayTeam, 'w20')}</span>
+                  </div>
+                  <span class="overlay-next-details-small">${match.venue}</span>
+                </div>
+              `).join('')}
+            </div>
+            <span class="overlay-next-details">${dateLabel}</span>
+          `;
+        }
+
         nextMatchEl.innerHTML = `
-          <span class="overlay-next-label">Próximo partido</span>
-          <div class="overlay-next-teams">
-            <span class="overlay-next-team">${flagImg(nextMatch.homeTeam, 'w20')} ${nextMatch.homeTeam}</span>
-            <span class="overlay-next-vs">vs</span>
-            <span class="overlay-next-team">${nextMatch.awayTeam} ${flagImg(nextMatch.awayTeam, 'w20')}</span>
-          </div>
-          <span class="overlay-next-details">${dateLabel} | ${nextMatch.venue}</span>
+          <span class="overlay-next-label">Próximo ${simultaneousMatches.length > 1 ? 'partidos' : 'partido'}</span>
+          ${matchesHTML}
         `;
       }
     }

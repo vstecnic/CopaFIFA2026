@@ -402,6 +402,26 @@ body, html {
   font-weight: 400;
 }
 
+.overlay-next-simultaneous {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.overlay-next-match-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.overlay-next-details-small {
+  font-size: 0.55rem;
+  font-family: var(--font-title);
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
 .pulse-dot {
   width: 8px;
   height: 8px;
