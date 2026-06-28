@@ -282,7 +282,7 @@
           "wikiName": "Ismael_Saibari"
         },
         {
-          "name": "Vinícius Júnior",
+          "name": "Vinicius Júnior",
           "playerId": "411082",
           "minute": 32,
           "team": "BRA",
@@ -327,7 +327,7 @@
       "scorers": [
         { "name": "Matheus Cunha", "playerId": "", "minute": 23, "team": "BRA", "wikiName": "Matheus_Cunha" },
         { "name": "Matheus Cunha", "playerId": "", "minute": 36, "team": "BRA", "wikiName": "Matheus_Cunha" },
-        { "name": "Vinícius Júnior", "playerId": "", "minute": 48, "team": "BRA", "wikiName": "Vinicius_Jr" }
+        { "name": "Vinicius Júnior", "playerId": "", "minute": 48, "team": "BRA", "wikiName": "Vinicius_Jr" }
       ]
     }
   },
