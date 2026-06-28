@@ -1038,8 +1038,14 @@
     "awayTeam": "ESP",
     "date": "2026-06-26T20:00:00Z",
     "venue": "Estadio Akron, Zapopan",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Alejandro Bena", "playerId": "", "minute": 42, "team": "ESP", "wikiName": "Alejandro_Bena" }
+      ]
+    }
   },
   {
     "id": "match_H_6",
@@ -1224,8 +1230,17 @@
     "awayTeam": "ARG",
     "date": "2026-06-28T02:00:00Z",
     "venue": "AT&T Stadium, Dallas",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 3,
+      "scorers": [
+        { "name": "Mousa Tamari", "playerId": "", "minute": 14, "team": "JOR", "wikiName": "Mousa_Tamari" },
+        { "name": "Lionel Messi", "playerId": "", "minute": 88, "team": "ARG", "wikiName": "Lionel_Messi" },
+        { "name": "Ángel Di María", "playerId": "", "minute": 45, "team": "ARG", "wikiName": "Ángel_Di_María" },
+        { "name": "Julián Álvarez", "playerId": "", "minute": 72, "team": "ARG", "wikiName": "Julián_Álvarez" }
+      ]
+    }
   },
   {
     "id": "match_J_6",
@@ -1234,8 +1249,19 @@
     "awayTeam": "AUT",
     "date": "2026-06-28T02:00:00Z",
     "venue": "Arrowhead Stadium, Kansas City",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 3,
+      "scorers": [
+        { "name": "Rafik Belghali", "playerId": "", "minute": 31, "team": "DZA", "wikiName": "Rafik_Belghali" },
+        { "name": "Marcel Sabitzer", "playerId": "", "minute": 49, "team": "AUT", "wikiName": "Marcel_Sabitzer" },
+        { "name": "Houssem Aouar", "playerId": "", "minute": 67, "team": "DZA", "wikiName": "Houssem_Aouar" },
+        { "name": "Christoph Baumgartner", "playerId": "", "minute": 75, "team": "AUT", "wikiName": "Christoph_Baumgartner" },
+        { "name": "Riyad Mahrez", "playerId": "", "minute": 90, "team": "DZA", "wikiName": "Riyad_Mahrez" },
+        { "name": "Michael Gregoritsch", "playerId": "", "minute": 82, "team": "AUT", "wikiName": "Michael_Gregoritsch" }
+      ]
+    }
   },
   {
     "id": "match_K_1",
@@ -1316,8 +1342,12 @@
     "awayTeam": "PRT",
     "date": "2026-06-27T23:30:00Z",
     "venue": "Hard Rock Stadium, Miami",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 0,
+      "scorers": []
+    }
   },
   {
     "id": "match_K_6",
@@ -1326,8 +1356,17 @@
     "awayTeam": "UZB",
     "date": "2026-06-27T23:30:00Z",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 3,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Yoane Wissa", "playerId": "", "minute": 28, "team": "COD", "wikiName": "Yoane_Wissa" },
+        { "name": "Tsamba Ubi", "playerId": "", "minute": 56, "team": "COD", "wikiName": "Tsamba_Ubi" },
+        { "name": "Chancel Mbemba", "playerId": "", "minute": 78, "team": "COD", "wikiName": "Chancel_Mbemba" },
+        { "name": "Abbosbek Fayzullaev", "playerId": "", "minute": 65, "team": "UZB", "wikiName": "Abbosbek_Fayzullaev" }
+      ]
+    }
   },
   {
     "id": "match_L_1",
@@ -1403,8 +1442,15 @@
     "awayTeam": "GBR",
     "date": "2026-06-27T19:00:00Z",
     "venue": "MetLife Stadium, New York/New Jersey",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 0,
+      "awayScore": 2,
+      "scorers": [
+        { "name": "Jude Bellingham", "playerId": "", "minute": 62, "team": "GBR", "wikiName": "Jude_Bellingham" },
+        { "name": "Harry Kane", "playerId": "", "minute": 67, "team": "GBR", "wikiName": "Harry_Kane" }
+      ]
+    }
   },
   {
     "id": "match_L_6",
@@ -1413,7 +1459,15 @@
     "awayTeam": "GHA",
     "date": "2026-06-27T22:00:00Z",
     "venue": "Lincoln Financial Field, Philadelphia",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 2,
+      "awayScore": 1,
+      "scorers": [
+        { "name": "Petar Sučić", "playerId": "", "minute": 31, "team": "HRV", "wikiName": "Petar_Sučić" },
+        { "name": "Derrick Luckassen", "playerId": "", "minute": 73, "team": "GHA", "wikiName": "Derrick_Luckassen" },
+        { "name": "Nikola Vlašić", "playerId": "", "minute": 83, "team": "HRV", "wikiName": "Nikola_Vlašić" }
+      ]
+    }
   }
 ]

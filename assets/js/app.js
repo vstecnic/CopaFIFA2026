@@ -59,7 +59,7 @@ async function bootstrap() {
     // Última actualización de datos
     const updateEl = document.getElementById('overlay-update-text');
     if (updateEl) {
-      const lastUpdated = data.dataLastUpdated || '2026-06-26T02:30:00Z';
+      const lastUpdated = data.dataLastUpdated || '2026-06-28T04:00:00Z';
       const dt = new Date(lastUpdated);
       // Mostrar en UTC-3 (Argentina)
       const localHour = ((dt.getUTCHours() - 3) + 24) % 24;
@@ -67,7 +67,9 @@ async function bootstrap() {
       updateEl.textContent = `Últ. actualización: ${dt.getUTCDate()} ${MONTHS_SHORT[dt.getUTCMonth()]} ${dt.getUTCFullYear()}, ${localHour}:${localMin} hs`;
     }
 
-    // Próximo partido(s)
+    // Próximo partido - REMOVED (will implement Round of 16 display next)
+    // TODO: Add Round of 16 knockout matches display here in future update
+    /*
     const nextMatchEl = document.getElementById('overlay-next-match');
     if (nextMatchEl) {
       // Use the last played match date as reference (no browser-clock dependency)
@@ -131,6 +133,7 @@ async function bootstrap() {
         `;
       }
     }
+    */
 
   } catch (error) {
     console.error('Error al iniciar la aplicación:', error);
