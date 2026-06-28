@@ -1140,8 +1140,18 @@
     "awayTeam": "FRA",
     "date": "2026-06-26T19:00:00Z",
     "venue": "Gillette Stadium, Boston",
-    "status": "scheduled",
-    "result": null
+    "status": "played",
+    "result": {
+      "homeScore": 1,
+      "awayScore": 4,
+      "scorers": [
+        { "name": "Ousmane Dembélé", "playerId": "", "minute": 7, "team": "FRA", "wikiName": "Ousmane_Dembélé" },
+        { "name": "Thelo Aasgaard", "playerId": "", "minute": 21, "team": "NOR", "wikiName": "Thelo_Aasgaard" },
+        { "name": "Ousmane Dembélé", "playerId": "", "minute": 20, "team": "FRA", "wikiName": "Ousmane_Dembélé" },
+        { "name": "Ousmane Dembélé", "playerId": "", "minute": 32, "team": "FRA", "wikiName": "Ousmane_Dembélé" },
+        { "name": "Yankuba Diouf", "playerId": "", "minute": 94, "team": "FRA", "wikiName": "Yankuba_Diouf" }
+      ]
+    }
   },
   {
     "id": "match_I_6",
